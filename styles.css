@@ -1,0 +1,121 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+}
+
+header {
+    background-color: #5c5c58;
+    padding: 10px 20px;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo a {
+    color: #1df1e6;
+    text-decoration: none;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.logo-main {
+    color: #1ad8ce;
+    font-size: 80px;
+    margin: 100px 0px 40px 0px;
+    font-weight: bold;
+}
+
+.nav-list {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-list li a {
+    color: #1df1e6;
+    text-decoration: none;
+    font-size: 16px;
+    margin: 0 15px;
+}
+
+.btn-experimente {
+    background-color: #1ad8ce;
+    color: rgb(19, 15, 15);
+    border: none;
+    padding: 10px 20px;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+.btn-comeceGratis {
+    background-color: #1ad8ce;
+    color: rgb(19, 15, 15);
+    border: none;
+    padding: 10px 20px;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 10px;
+    margin: 100px 0px 40px 0px;
+
+}
+
+.btn-comeceAgora{
+    background-color: #1ad8ce;
+    color: rgb(19, 15, 15);
+    border: none;
+    padding: 10px 20px;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+main {
+    
+    padding: 40px;
+    text-align: center;
+}
+
+.containe {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+}
+
+.feature {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.feature2 {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.list-main {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    font-weight: bold;
+    list-style-type: none;
+    padding: 0;
+}
+
+.fidel {
+    color: #1cd8cf;
+    display: flex;
+    justify-content: baseline;
+    margin-left: 40px;
+    font-size: 50px;
+    font-weight: bold;
+}
