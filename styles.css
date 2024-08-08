@@ -4,15 +4,17 @@ body {
     background-color: #f0f0f0;
 }
 
-header {
-    background-color: #5c5c58;
-    padding: 10px 20px;
-}
+
 
 .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    background-color: #5c5c58;
+    position: fixed; 
+    top: 0; 
+    width: 100%; 
+    padding: 10px 20px; 
 }
 
 .logo a {
@@ -20,6 +22,7 @@ header {
     text-decoration: none;
     font-size: 30px;
     font-weight: bold;
+    margin-left: 60px;
 }
 
 .logo-main {
@@ -51,6 +54,7 @@ header {
     font-weight: bold;
     cursor: pointer;
     border-radius: 10px;
+    margin-right: 60px;
 }
 
 .btn-comeceGratis {
@@ -83,6 +87,20 @@ main {
 
 .containe {
     display: flex;
+    flex-direction: column;
+}
+
+.fidel {
+    color: #1cd8cf;
+    display: flex;
+    justify-content: baseline;
+    margin-left: 40px;
+    font-size: 50px;
+    font-weight: bold;
+}
+
+.principal{
+    display: flex;
     justify-content: center;
     align-items: center;
     gap: 40px;
@@ -93,6 +111,7 @@ main {
     padding: 20px;
     border-radius: 5px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    border-style: groove;
 }
 
 .feature2 {
@@ -100,6 +119,7 @@ main {
     padding: 20px;
     border-radius: 5px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    border-style: groove;
 }
 
 .list-main {
@@ -109,21 +129,4 @@ main {
     font-weight: bold;
     list-style-type: none;
     padding: 0;
-}
-
-.fidel {
-    color: #1cd8cf;
-    display: flex;
-    justify-content: baseline;
-    margin-left: 40px;
-    font-size: 50px;
-    font-weight: bold;
-}
-.fidel {
-    color: #1cd8cf;
-    display: flex;
-    justify-content: baseline;
-    margin-left: 40px;
-    font-size: 50px;
-    font-weight: bold;
 }
