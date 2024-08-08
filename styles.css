@@ -119,3 +119,11 @@ main {
     font-size: 50px;
     font-weight: bold;
 }
+.fidel {
+    color: #1cd8cf;
+    display: flex;
+    justify-content: baseline;
+    margin-left: 40px;
+    font-size: 50px;
+    font-weight: bold;
+}
