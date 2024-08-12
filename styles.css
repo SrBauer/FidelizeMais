@@ -3,22 +3,30 @@ body {
     font-family: Arial, sans-serif;
     background-color: #f0f0f0;
 }
+<<<<<<< HEAD
 
 :root {
     --azul-bebe: #1cd8cf;
 }
 
+=======
+ 
+:root {
+    --azul-bebe: #1cd8cf;
+}
+ 
+>>>>>>> de4368b2a3c104fb7d2dd3a9a6861e08cd58bd12
 .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
     background-color: #5c5c58;
-    position: fixed; 
-    top: 0; 
-    width: 100%; 
-    padding: 10px 20px; 
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 10px 20px;
 }
-
+ 
 .logo a {
     color: #1df1e6;
     text-decoration: none;
@@ -26,28 +34,28 @@ body {
     font-weight: bold;
     margin-left: 60px;
 }
-
+ 
 .logo-main {
     color: #1ad8ce;
     font-size: 80px;
     margin: 100px 0px 40px 0px;
     font-weight: bold;
 }
-
+ 
 .nav-list {
     list-style: none;
     display: flex;
     margin: 0;
     padding: 0;
 }
-
+ 
 .nav-list li a {
     color: #1df1e6;
     text-decoration: none;
     font-size: 16px;
     margin: 0 15px;
 }
-
+ 
 .btn-experimente {
     background-color: #1ad8ce;
     color: rgb(19, 15, 15);
@@ -58,7 +66,11 @@ body {
     border-radius: 10px;
     margin-right: 60px;
 }
+<<<<<<< HEAD
 
+=======
+ 
+>>>>>>> de4368b2a3c104fb7d2dd3a9a6861e08cd58bd12
 .btn-comeceGratis  {
     background-color: #1ad8ce;
     color: rgb(19, 15, 15);
@@ -67,10 +79,10 @@ body {
     font-weight: bold;
     cursor: pointer;
     border-radius: 10px;
-    margin: 100px 0px 40px 0px;
-
+    margin: 100px 0px 100px 0px;
+ 
 }
-
+ 
 .btn-comeceAgora{
     background-color: #1ad8ce;
     color: rgb(19, 15, 15);
@@ -82,17 +94,60 @@ body {
     margin: 100px 0px 40px 0px;
     margin-bottom: 20px;
 }
-
+ 
 main {
-    
-    padding: 40px;
+   
+    padding: 80px;
     text-align: center;
 }
-
+ 
 .containe {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+<<<<<<< HEAD
+=======
+}
+
+.baner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--azul-bebe);
+    height: 500px;
+    padding: 0 20px;
+
+}
+
+.baner-items {
+    width: 60%;
+    justify-content: space-between;
+}
+
+.baner-items h2{
+    text-align: left; 
+    margin-left: 20px; 
+}
+
+.baner-items h1 {
+    text-align: left; 
+    margin-left: 20px; 
+}
+
+.baner-items p {
+    text-align: left; 
+    margin-left: 20px; 
+}
+
+.baner-icon {
+    width: 30%;
+    text-align: right;
+}
+
+.baner-icon img {
+    max-width: 100%;
+    height: auto;
+>>>>>>> de4368b2a3c104fb7d2dd3a9a6861e08cd58bd12
 }
 
 .fidel {
@@ -103,7 +158,7 @@ main {
     font-size: 50px;
     font-weight: bold;
 }
-
+ 
 .principal{
     display: flex;
     justify-content: center;
@@ -111,21 +166,31 @@ main {
     gap: 40px;
     width: 100%;
 }
-
+ 
 .feature {
     background-color: #fff;
     border-radius: 5px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     border-style: groove;
+<<<<<<< HEAD
     width: 300px; 
     height: 550px;
 
+=======
+    width: 300px;
+    height: 550px;
+ 
+>>>>>>> de4368b2a3c104fb7d2dd3a9a6861e08cd58bd12
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
 }
+<<<<<<< HEAD
 
+=======
+ 
+>>>>>>> de4368b2a3c104fb7d2dd3a9a6861e08cd58bd12
 .list-main {
     display: flex;
     justify-content: center;
@@ -134,13 +199,18 @@ main {
     list-style-type: none;
     padding: 0;
 }
+<<<<<<< HEAD
 
+=======
+ 
+>>>>>>> de4368b2a3c104fb7d2dd3a9a6861e08cd58bd12
 .feature h3 {
     background-color: var(--azul-bebe);
     color: white;
     padding: 5px 20px;
     border-radius: 8px;
 }
+<<<<<<< HEAD
 
 .principal p {
     margin-bottom: 10px; 
@@ -150,3 +220,14 @@ main {
 .list-main li {
     margin-bottom: 10px;
 }
+=======
+ 
+.principal p {
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+ 
+.list-main li {
+    margin-bottom: 10px;
+}
+>>>>>>> de4368b2a3c104fb7d2dd3a9a6861e08cd58bd12
