@@ -4,7 +4,9 @@ body {
     background-color: #f0f0f0;
 }
 
-
+:root {
+    --azul-bebe: #1cd8cf;
+}
 
 .navbar {
     display: flex;
@@ -57,7 +59,7 @@ body {
     margin-right: 60px;
 }
 
-.btn-comeceGratis {
+.btn-comeceGratis  {
     background-color: #1ad8ce;
     color: rgb(19, 15, 15);
     border: none;
@@ -77,6 +79,8 @@ body {
     font-weight: bold;
     cursor: pointer;
     border-radius: 10px;
+    margin: 100px 0px 40px 0px;
+    margin-bottom: 20px;
 }
 
 main {
@@ -88,6 +92,7 @@ main {
 .containe {
     display: flex;
     flex-direction: column;
+    align-items: flex-start;
 }
 
 .fidel {
@@ -104,22 +109,21 @@ main {
     justify-content: center;
     align-items: center;
     gap: 40px;
+    width: 100%;
 }
 
 .feature {
     background-color: #fff;
-    padding: 20px;
     border-radius: 5px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     border-style: groove;
-}
+    width: 300px; 
+    height: 550px;
 
-.feature2 {
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    border-style: groove;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
 }
 
 .list-main {
@@ -129,4 +133,20 @@ main {
     font-weight: bold;
     list-style-type: none;
     padding: 0;
+}
+
+.feature h3 {
+    background-color: var(--azul-bebe);
+    color: white;
+    padding: 5px 20px;
+    border-radius: 8px;
+}
+
+.principal p {
+    margin-bottom: 10px; 
+    font-weight: bold;
+}
+
+.list-main li {
+    margin-bottom: 10px;
 }
