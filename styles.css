@@ -67,7 +67,7 @@ body {
     font-weight: bold;
     cursor: pointer;
     border-radius: 10px;
-    margin: 100px 0px 40px 0px;
+    margin: 100px 0px 100px 0px;
  
 }
  
@@ -85,7 +85,7 @@ body {
  
 main {
    
-    padding: 40px;
+    padding: 80px;
     text-align: center;
 }
  
@@ -94,7 +94,47 @@ main {
     flex-direction: column;
     align-items: flex-start;
 }
- 
+
+.baner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--azul-bebe);
+    height: 500px;
+    padding: 0 20px;
+
+}
+
+.baner-items {
+    width: 60%;
+    justify-content: space-between;
+}
+
+.baner-items h2{
+    text-align: left; 
+    margin-left: 20px; 
+}
+
+.baner-items h1 {
+    text-align: left; 
+    margin-left: 20px; 
+}
+
+.baner-items p {
+    text-align: left; 
+    margin-left: 20px; 
+}
+
+.baner-icon {
+    width: 30%;
+    text-align: right;
+}
+
+.baner-icon img {
+    max-width: 100%;
+    height: auto;
+}
+
 .fidel {
     color: #1cd8cf;
     display: flex;
