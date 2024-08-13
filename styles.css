@@ -3,19 +3,11 @@ body {
     font-family: Arial, sans-serif;
     background-color: #f0f0f0;
 }
-<<<<<<< HEAD
-
-:root {
-    --azul-bebe: #1cd8cf;
-}
-
-=======
  
 :root {
     --azul-bebe: #1cd8cf;
 }
  
->>>>>>> de4368b2a3c104fb7d2dd3a9a6861e08cd58bd12
 .navbar {
     display: flex;
     justify-content: space-between;
@@ -28,7 +20,7 @@ body {
 }
  
 .logo a {
-    color: #1df1e6;
+    color: var(--azul-bebe);
     text-decoration: none;
     font-size: 30px;
     font-weight: bold;
@@ -36,7 +28,7 @@ body {
 }
  
 .logo-main {
-    color: #1ad8ce;
+    color: var(--azul-bebe);
     font-size: 80px;
     margin: 100px 0px 40px 0px;
     font-weight: bold;
@@ -66,11 +58,7 @@ body {
     border-radius: 10px;
     margin-right: 60px;
 }
-<<<<<<< HEAD
-
-=======
  
->>>>>>> de4368b2a3c104fb7d2dd3a9a6861e08cd58bd12
 .btn-comeceGratis  {
     background-color: #1ad8ce;
     color: rgb(19, 15, 15);
@@ -100,33 +88,44 @@ main {
     padding: 80px;
     text-align: center;
 }
+
+.rosto {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+}
  
 .containe {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-<<<<<<< HEAD
-=======
+    margin-top: 50px;
+    
 }
 
 .baner {
     display: flex;
-    justify-content: space-between;
     align-items: center;
     background-color: var(--azul-bebe);
-    height: 500px;
+    height: 600px;
     padding: 0 20px;
-
+    box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;    
+    border-radius: 30px;
 }
 
 .baner-items {
     width: 60%;
     justify-content: space-between;
+    display: flex;
+    flex-direction: column;
+    gap: 80px;
 }
 
 .baner-items h2{
     text-align: left; 
     margin-left: 20px; 
+    
 }
 
 .baner-items h1 {
@@ -140,14 +139,13 @@ main {
 }
 
 .baner-icon {
-    width: 30%;
+    width: 60%;
     text-align: right;
 }
 
 .baner-icon img {
     max-width: 100%;
     height: auto;
->>>>>>> de4368b2a3c104fb7d2dd3a9a6861e08cd58bd12
 }
 
 .fidel {
@@ -172,25 +170,15 @@ main {
     border-radius: 5px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     border-style: groove;
-<<<<<<< HEAD
-    width: 300px; 
-    height: 550px;
-
-=======
     width: 300px;
     height: 550px;
  
->>>>>>> de4368b2a3c104fb7d2dd3a9a6861e08cd58bd12
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
 }
-<<<<<<< HEAD
-
-=======
  
->>>>>>> de4368b2a3c104fb7d2dd3a9a6861e08cd58bd12
 .list-main {
     display: flex;
     justify-content: center;
@@ -199,28 +187,13 @@ main {
     list-style-type: none;
     padding: 0;
 }
-<<<<<<< HEAD
-
-=======
  
->>>>>>> de4368b2a3c104fb7d2dd3a9a6861e08cd58bd12
 .feature h3 {
     background-color: var(--azul-bebe);
     color: white;
     padding: 5px 20px;
     border-radius: 8px;
 }
-<<<<<<< HEAD
-
-.principal p {
-    margin-bottom: 10px; 
-    font-weight: bold;
-}
-
-.list-main li {
-    margin-bottom: 10px;
-}
-=======
  
 .principal p {
     margin-bottom: 10px;
@@ -230,4 +203,3 @@ main {
 .list-main li {
     margin-bottom: 10px;
 }
->>>>>>> de4368b2a3c104fb7d2dd3a9a6861e08cd58bd12
