@@ -6,6 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cabeçalho Alinhado</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bitter:ital,wght@0,100..900;1,100..900&
+    family=Merriweather+Sans:ital,wght@0,300..800;1,300..800&family=Reddit+Sans+Condensed:wght@20
+    0..900&display=swap" rel="stylesheet">
+
 </head>
 
 <body>
@@ -28,7 +34,7 @@
                 </svg>
                 <span>Entrar</span>
                 </button>
-                <button class="btn">
+                <button id="btn-experimente" class="btn">
                     <svg width="180px" height="60px" viewBox="0 0 180 60" class="border">
                         <polyline points="179,1 179,59 1,59 1,1 179,1" class="bg-line" />
                         <polyline points="179,1 179,59 1,59 1,1 179,1" class="hl-line" />
@@ -45,7 +51,7 @@
             <h1 class="logo-main">FIDELIZE +</h1>
             <h2>Fidelização de clientes</h2>
             <p>Transforme sua empresa em sucesso.</p>
-            <button class="glow-on-hover" type="button">Comece Gratis!</button>
+            <button id="btn-comece-gratis" class="glow-on-hover" type="button">Comece Gratis!</button>
         </section>
 
         <section class="baner">
@@ -80,7 +86,7 @@
                         <li>Sorteios personalizados</li>
                         <li>Pesquisa de Satisfação</li>
                     </ul>
-                    <button class="btn-comeceAgora">Comece agora</button>
+                    <button id="btn-comece-agora-1" class="btn-comeceAgora">Comece agora</button>
                 </div>
 
                 <div class="feature">
@@ -99,35 +105,12 @@
                         <li>E-mail de Markting</li>
                     </ul>
 
-                    <button class="btn-comeceAgora">Comece agora</button>
+                    <button id="btn-comece-agora-2" class="btn-comeceAgora">Comece agora</button>
                 </div>
             </div>
         </section>
 
-        <div id="modal-cadastro" class="modal">
-            <div class="sidebar">
-                <h1>Fidelize +</h1>
-                <h2>Bem vindo</h2>
-                <button class="btn">Entrar</button>
-                <p>Acesse sua conta para informações completas</p>
-            </div>
-            <div class="main-content">
-                <h2>Crie sua conta agora mesmo.</h2>
-                <p>Preencha com suas informações</p>
-                <form>
-                    <label for="name">Nome</label>
-                    <input type="text" id="name" name="name" required>
-    
-                    <label for="email">Email</label>
-                    <input type="email" id="email" name="email" required>
-    
-                    <label for="password">Senha</label>
-                    <input type="password" id="password" name="password" required>
-    
-                    <button type="submit" class="btn">Entrar</button>
-                </form>
-            </div>
-        </div>
+        <div id="modal-cadastro-container"></div>
 
     </main>
 

@@ -1,14 +1,19 @@
-document.addEventListener('DOMContentLoaded', function () {
-    const btnExperimente = document.querySelector('.btn-experimente');
-    const modalCadastro = document.getElementById('modal-cadastro');
+document.addEventListener("DOMContentLoaded", function() {
 
-    btnExperimente.addEventListener('click', function () {
-        modalCadastro.style.display = 'flex';
-    });
+    function loadCadastro() {
+        fetch('cadastro.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('modal-cadastro-container').innerHTML = data;
 
-    window.addEventListener('click', function (event) {
-        if (event.target == modalCadastro) {
-            modalCadastro.style.display = 'none';
-        }
-    });
+                document.getElementById('modal-cadastro').style.display = 'block';
+            })
+            .catch(error => console.error('Erro ao carregar a tela de cadastro:', error));
+    }
+
+    // Vincular os eventos de clique aos botões
+    document.getElementById('btn-experimente').addEventListener('click', loadCadastro);
+    document.getElementById('btn-comece-gratis').addEventListener('click', loadCadastro);
+    document.getElementById('btn-comece-agora-1').addEventListener('click', loadCadastro);
+    document.getElementById('btn-comece-agora-2').addEventListener('click', loadCadastro);
 });
