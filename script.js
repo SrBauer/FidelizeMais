@@ -1,19 +1,9 @@
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener('DOMContentLoaded', function () {
+    const btnEntrar = document.getElementById('btn-entrar');
+    const loginContainer = document.getElementById('login-container');
 
-    function loadCadastro() {
-        fetch('cadastro.html')
-            .then(response => response.text())
-            .then(data => {
-                document.getElementById('modal-cadastro-container').innerHTML = data;
-
-                document.getElementById('modal-cadastro').style.display = 'block';
-            })
-            .catch(error => console.error('Erro ao carregar a tela de cadastro:', error));
-    }
-
-    // Vincular os eventos de clique aos botões
-    document.getElementById('btn-experimente').addEventListener('click', loadCadastro);
-    document.getElementById('btn-comece-gratis').addEventListener('click', loadCadastro);
-    document.getElementById('btn-comece-agora-1').addEventListener('click', loadCadastro);
-    document.getElementById('btn-comece-agora-2').addEventListener('click', loadCadastro);
+    btnEntrar.addEventListener('click', function (event) {
+        event.preventDefault(); // Evita o comportamento padrão do link
+        loginContainer.style.display = 'flex';
+    });
 });
