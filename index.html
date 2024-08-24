@@ -15,37 +15,31 @@
 </head>
 
 <body>
-<header>
-    <nav class="navbar">
-        <div class="logo">
-            <a href="#">FIDELIZE +</a>
-        </div>
-        <ul class="nav-list">
-            <li><a href="#">Como Funciona</a></li>
-            <li><a href="#">Recursos</a></li>
-            <li><a href="#">Planos</a></li>
-            <li><a href="#">Contatos</a></li>
-        </ul>
-        <div class="btn-navbar">
-            <a href="./login.html" id="btn-entrar" class="btn">
-                <svg width="180px" height="60px" viewBox="0 0 180 60" class="border">
-                    <polyline points="179,1 179,59 1,59 1,1 179,1" class="bg-line"></polyline>
-                    <polyline points="179,1 179,59 1,59 1,1 179,1" class="hl-line"></polyline>
-                </svg>
-                <span>Entrar</span>
-            </a>
-            <a id="btn-experimente" class="btn">
-                <svg width="180px" height="60px" viewBox="0 0 180 60" class="border">
-                    <polyline points="179,1 179,59 1,59 1,1 179,1" class="bg-line"></polyline>
-                    <polyline points="179,1 179,59 1,59 1,1 179,1" class="hl-line"></polyline>
-                </svg>
-                <span>Experimente</span>
-            </a>
-        </div>
-    </nav>
-</header>
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <a href="#">FIDELIZE +</a>
+            </div>
+            <ul class="nav-list">
+                <li><a href="#">Como Funciona</a></li>
+                <li><a href="#">Recursos</a></li>
+                <li><a href="#">Planos</a></li>
+                <li><a href="#">Contatos</a></li>
+            </ul>
+            <div class="btn-navbar">
+                <a href="./login.html" id="btn-entrar" class="btn">
+                    <svg width="180px" height="60px" viewBox="0 0 180 60" class="border">
+                        <polyline points="179,1 179,59 1,59 1,1 179,1" class="bg-line"></polyline>
+                        <polyline points="179,1 179,59 1,59 1,1 179,1" class="hl-line"></polyline>
+                    </svg>
+                    <span>Entrar</span>
+                </a>
 
-    
+            </div>
+        </nav>
+    </header>
+
+
     <main>
         <section class="rosto">
             <h1 class="logo-main">FIDELIZE +</h1>
@@ -110,11 +104,43 @@
             </div>
         </section>
 
-        <div id="modal-cadastro-container"></div>
+        <sectionc class="cadastro">
+            <h1>Ativação do Programa de Fidelidade</h1>
+            <h2>Dados Cadastrais</h2>
+            <form>
+                <label for="full-name">Nome Completo:</label>
+                <input type="text" id="full-name" name="full-name" required>
+                
+                <label for="company">Empresa:</label>
+                <select id="company" name="company">
+
+                <label for="password">Senha:</label>
+                <input type="password" id="password" name="password" required>
+                
+                <label for="email">Endereço de E-mail:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="confirm-password">Confirmação de Senha:</label>
+                <input type="password" id="confirm-password" name="confirm-password" required>
+                
+                
+                    <option value="lumberjack">Lumberjack Barbershop</option>
+
+                    <!-- Adicione mais opções conforme necessário -->
+
+                </select>
+                
+                
+                <button type="submit">Ativar Conta</button>
+            </form>
+
+        </sectionc>
 
     </main>
 
     <script src="script.js"></script>
+
+    <!--script>window.location.href = 'login.html';</script-->
 </body>
 
 </html>

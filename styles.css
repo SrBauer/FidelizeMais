@@ -76,6 +76,7 @@ body {
     color: var(--azul-bebe);
     cursor: pointer;
     transition: 1s ease-in-out;
+    margin-right: 40px;
 }
 
 svg {

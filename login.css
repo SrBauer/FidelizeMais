@@ -6,7 +6,7 @@
     margin-top: 40px;
 }
 
-.login-box {
+ .login-box {
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -20,7 +20,7 @@
     box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
      rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
      rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
-}
+} 
 
 .login-box input[type="text"],
 .login-box input[type="password"] {
@@ -32,51 +32,68 @@
     box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
     rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
     rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
-}
+} 
 
-.login-box h2 {
+ .login-box h2 {
     font-size: 50px;
-}
+} 
 
-.login-box button {
-    background: #f0f0f0;
+ .login-box button {
+    background: #3ea2f5;
     border: none;
-    padding: 10px 20px;
     border-radius: 5px;
     cursor: pointer;
     font-size: 16px;
-    width: 100px;
+    width: 150px;
     box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
     rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
     rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+} 
+
+.steleBtn{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
 }
 
-.login-box .options {
-    display: flex;
-    justify-content: space-between;
+ .cadastro {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 300px;
+} 
+
+
+ h1, h2 {
+    color: #333;
+}
+
+label {
+    display: block;
     margin-top: 10px;
+    color: #555;
 }
 
-.login-box .options a {
-    color: blue;
-    text-decoration: none;
-}
-
-.login-box .options label {
-    display: flex;
-    align-items: center;
-}
-
-#login-container {
-    position: fixed;
-    top: 0;
-    left: 0;
+input, select {
     width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.8); /* fundo escurecido */
-    display: none;
-    justify-content: center;
-    align-items: center;
-    z-index: 1000; /* Coloca o login acima de outros elementos */
+    padding: 8px;
+    margin-top: 5px;
+    border: 1px solid #5aa5eb;
+    border-radius: 4px;
 }
 
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: #007BFF;
+    color: #ffffff;
+    border: none;
+    border-radius: 4px;
+    margin-top: 20px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+} 
