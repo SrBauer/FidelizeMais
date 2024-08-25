@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ativação do Programa de Fidelidade</title>
+    <link rel="stylesheet" href="assets/css/cadastro.css">
+</head>
+
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>Ativação do Programa de Fidelidade</h1>
+        </header>
+        <div class="form-container">
+            <h3>Dados Cadastrais</h3>
+            <p class="info">Atenção: Preencha os dados abaixo para habilitar sua conta e ter acesso ao Painel de
+                Controle.</p>
+            <form>
+                <div class="form-group">
+                    <label id="lblEmpresa" for="empresa">Empresa:</label>
+                    <input type="text" id="empresa" name="empresa">
+                </div>
+                <div class="form-group">
+                    <label id="lblNome" for="nome">Seu Nome:</label>
+                    <input type="text" id="nome" name="nome">
+                </div>
+                <div class="form-group">
+                    <label id="lblEmail" for="E-mail">Seu E-mail</label>
+                    <input type="text" id="E-mail" name="E-mail">
+                </div>
+                <div class="form-group">
+                    <label id="lblCelular" for="celular">Celular:</label>
+                    <input type="tel" id="celular" name="celular">
+                </div>
+                <div class="form-group">
+                    <label id="lblRamo" for="ramo">Ramo de Atividade:</label>
+                    <select id="ramo" name="ramo">
+                        <option value="">Selecione uma opção...</option>
+                        <option value="barbearia">Barbearia</option>
+                        <option value="petShop">PetShop</option>
+                        <option value="farmacia">Farmácia</option>
+                        <option value="restaurante">Restaurante</option>
+                        <option value="cafeteria">Cafeteria</option>
+                        <option value="altomotivo">Altomotivo</option>
+                        <option value="vestuario">Vestuario</option>
+
+                        <!-- Adicione outras opções conforme necessário -->
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label id="lblPlano" for="plano">Plano:</label>
+                    <select id="plano" name="plano">
+                        <option value="Gratis">Grátis</option>
+                        <option value="FidelizeBaby">Fidelize Baby</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label id="lblSenha" for="password">Defina uma Senha:</label>
+                    <input type="password" id="password" name="password">
+                </div>
+                <div class="form-group">
+                    <label id="lblConfirma" for="confirmaSenha">Cofirme sua Senha:</label>
+                    <input type="password" id="confirmaSenha" name="confirmaSenha">
+                </div>
+                <button onclick="submit">Enviar</button>
+            </form>
+
+        </div>
+
+    </div>
+
+    <script src="assets/js/script.js"></script>
+
+</body>
+
+</html>

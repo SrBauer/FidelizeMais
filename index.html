@@ -5,12 +5,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cabeçalho Alinhado</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Bitter:ital,wght@0,100..900;1,100..900&
-    family=Merriweather+Sans:ital,wght@0,300..800;1,300..800&family=Reddit+Sans+Condensed:wght@20
-    0..900&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+        rel="stylesheet">
 
 </head>
 
@@ -18,12 +18,12 @@
     <header>
         <nav class="navbar">
             <div class="logo">
-                <a href="#">FIDELIZE +</a>
+                <a href="#">FIDELIZE+</a>
             </div>
             <ul class="nav-list">
-                <li><a href="#">Como Funciona</a></li>
+                <li><a href="#baner">Como Funciona</a></li>
                 <li><a href="#">Recursos</a></li>
-                <li><a href="#">Planos</a></li>
+                <li><a href="#plano">Planos</a></li>
                 <li><a href="#">Contatos</a></li>
             </ul>
             <div class="btn-navbar">
@@ -43,34 +43,34 @@
     <main>
         <section class="rosto">
             <h1 class="logo-main">FIDELIZE +</h1>
-            <h2>Fidelização de clientes</h2>
+            <h3>Fidelização de clientes</h3>
             <p>Transforme sua empresa em sucesso.</p>
-            <button id="btn-comece-gratis" class="glow-on-hover" type="button">Comece Gratis!</button>
+            <a href="./cadastro.html" class="glow-on-hover">Comece Gratis!</a>
         </section>
 
-        <section class="baner">
+        <section id="baner" class="baner section">
             <div class="baner-items">
-                <h2>Fidelização de clientes</h2>
-                <h1>Está sem tempo?</h1>
-                <p>Em nossa mentoria nós implementamos seu Programa de
+                <h3>Fidelização de clientes</h3>
+                <h2>Está sem tempo?</h2>
+                <h4>Em nossa mentoria nós implementamos seu Programa de
                     Fidelidade para que você saia na frente, sem que você tenha qualquer trabalho.
 
                     Entenderemos as necessidades do seu negócio, seu perfil de
                     cliente ideal e aplicaremos as melhores práticas, ferramentas de marketing
-                    e até desenvolveremos o seu aplicativo personalizado. Confira!</p>
+                    e até desenvolveremos o seu aplicativo personalizado. Confira!</h4>
             </div>
             <div class="baner-icon">
-                <img src="https://cdn-icons-png.flaticon.com/128/5417/5417853.png" alt="Ícone">
+                <img src="assets/img/undraw_outer_space_re_u9vd.svg" alt="imagem de foguete em ditreção ao espaço">
             </div>
         </section>
 
-        <section class="containe">
+        <section id="plano" class="containe section">
             <p class="fidel">Fidelização de Cliente</p>
 
             <div class="principal">
                 <div class="feature">
-                    <h3>GRATIS</h3>
-                    <p>Crie gratuitamente seu programa de fidelidade para sua Empresa</p>
+                    <h4>GRATIS</h4>
+                    <p>Crie gratuitamente seu programa de fidelidade</p>
 
                     <ul class="list-main">
                         <li>40 Clientes</li>
@@ -80,11 +80,11 @@
                         <li>Sorteios personalizados</li>
                         <li>Pesquisa de Satisfação</li>
                     </ul>
-                    <button id="btn-comece-agora-1" class="btn-comeceAgora">Comece agora</button>
+                    <a href="./cadastro.html" id="btn-comece-agora-1" class="btn-comeceAgora">Comece agora</a>
                 </div>
 
                 <div class="feature">
-                    <h3>FIDELIZE BABY</h3>
+                    <h4>FIDELIZE BABY</h4>
                     <p>Plano de R$ 59,90 mensal</p>
 
                     <ul class="list-main">
@@ -99,44 +99,11 @@
                         <li>E-mail de Markting</li>
                     </ul>
 
-                    <button id="btn-comece-agora-2" class="btn-comeceAgora">Comece agora</button>
+                    <a href="./cadastro.html" id="btn-comece-agora-2" class="btn-comeceAgora">Comece agora</a>
                 </div>
             </div>
         </section>
 
-        <sectionc class="cadastro">
-            <h1>Ativação do Programa de Fidelidade</h1>
-            <h2>Dados Cadastrais</h2>
-            <form>
-                <label for="full-name">Nome Completo:</label>
-                <input type="text" id="full-name" name="full-name" required>
-                
-                <label for="company">Empresa:</label>
-                <select id="company" name="company">
-
-                <label for="password">Senha:</label>
-                <input type="password" id="password" name="password" required>
-                
-                <label for="email">Endereço de E-mail:</label>
-                <input type="email" id="email" name="email" required>
-
-                <label for="confirm-password">Confirmação de Senha:</label>
-                <input type="password" id="confirm-password" name="confirm-password" required>
-                
-                
-                    <option value="lumberjack">Lumberjack Barbershop</option>
-
-                    <!-- Adicione mais opções conforme necessário -->
-
-                </select>
-                
-                
-                <button type="submit">Ativar Conta</button>
-            </form>
-
-        </sectionc>
-
-    </main>
 
     <script src="script.js"></script>
 
