@@ -89,7 +89,7 @@ input, select {
     border-radius: 4px;
 }
 
-button {
+.entra {
     width: 100%;
     padding: 10px;
     background-color: #007BFF;
@@ -100,6 +100,6 @@ button {
     cursor: pointer;
 }
 
-button:hover {
+.entra:hover {
     background-color: #0056b3;
 } 

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="./assets/css/dashboard.css">
+</head>
+<body>
+    <div class="dashboard">
+        <header class="dashboard-header">
+            <h1>Dashboard</h1>
+        </header>
+
+        <div class="dashboard-welcome">
+            <p>Bem-vindo à Fidelize + </p>
+        </div>
+
+        <div class="dashboard-buttons">
+            <button class="button blue" onclick="showSection('cadastrar')">Cadastrar</button>
+            <button class="button green" onclick="showSection('membros')">Membros</button>
+            <button class="button orange" onclick="showSection('pontuar')">Pesquisar</button>
+            <button class="button purple" onclick="showSection('premiar')">Premiar</button>
+        </div>
+
+        <!-- Seções dinâmicas -->
+        <div id="cadastrar" class="section hidden blue-bg">
+            <button class="close-btn" onclick="hideSection('cadastrar')">&times;</button>
+            <h2>Cadastrar Novo Cliente</h2>
+            <form id="cadastroForm">
+                <label for="nome">Nome:</label><br>
+                <input type="text" id="nome" name="nome"><br>
+                <label for="telefone">Telefone:</label><br>
+                <input type="text" id="telefone" name="telefone"><br>
+                <label for="sexo">Sexo:</label><br>
+                <select id="sexo" name="sexo">
+                    <option value="masculino">Masculino</option>
+                    <option value="feminino">Feminino</option>
+                    <option value="outro">Outro</option>
+                </select><br><br>
+                <button type="button" onclick="cadastrarCliente()">Cadastrar</button>
+            </form>
+        </div>
+
+        <div id="membros" class="section hidden green-bg">
+            <button class="close-btn" onclick="hideSection('membros')">&times;</button>
+            <h2>Membros</h2>
+            <ul id="membrosList"></ul>
+        </div>
+
+        <div id="pontuar" class="section hidden orange-bg">
+            <button class="close-btn" onclick="hideSection('pontuar')">&times;</button>
+            <h2>Pesquisar Cliente</h2>
+            <input type="text" id="pesquisa" onkeyup="pesquisarCliente()" placeholder="Digite nome ou telefone...">
+            <ul id="resultadoPesquisa"></ul>
+        </div>
+
+        <div id="premiar" class="section hidden purple-bg">
+            <button class="close-btn" onclick="hideSection('premiar')">&times;</button>
+            <h2>Premiar</h2>
+            <form id="premiosForm">
+                <label for="premio">Nome do Prêmio:</label><br>
+                <input type="text" id="premio" name="premio"><br><br>
+                <button type="button" onclick="adicionarPremio()">Adicionar Prêmio</button>
+            </form>
+            <ul id="premiosList"></ul>
+        </div>
+    </div>
+    
+    <div class="dashboard-sections">
+
+        <div class="section clientes">
+            <h2>Clientes</h2>
+            <p>0 Cartões Cadastrados</p>
+            <p>0 Ativos</p>
+            <p>0 Cancelados</p>
+        </div>
+        <div class="section comportamento">
+            <h2>Comportamento</h2>
+            <p>0 Clientes Recorrentes</p>
+            <p>R$ 0,00 Ticket Médio</p>
+            <p>0 dias Recorrência</p>
+        </div>
+    </div>
+
+    <script src="./assets/js/dashboard.js"></script>
+</body>
+</html>
