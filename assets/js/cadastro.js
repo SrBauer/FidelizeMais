@@ -1,44 +1,32 @@
-{/* <script>
-    document.querySelector('form').addEventListener('submit', function(event) {
-        event.preventDefault() // Evita o envio do formulário padrão
+document.querySelector('form').addEventListener('submit', function(event) {
+    event.preventDefault();
 
-        // Captura os valores dos campos
-        const empresa = document.getElementById('empresa').value.trim();
-    const nome = document.getElementById('nome').value.trim();
-    const celular = document.getElementById('celular').value.trim();
+    const empresa = document.getElementById('empresa').value;
+    const nome = document.getElementById('nome').value;
+    const email = document.getElementById('E-mail').value;
+    const celular = document.getElementById('celular').value;
     const ramo = document.getElementById('ramo').value;
     const plano = document.getElementById('plano').value;
+    const senha = document.getElementById('password').value;
+    const confirmaSenha = document.getElementById('confirmaSenha').value;
 
-    // Validação simples
-    if (empresa === '' || nome === '' || celular === '' || ramo === '' || plano === '') {
-        alert('Por favor, preencha todos os campos.');
-    return;
-        }
+    if (senha !== confirmaSenha) {
+        alert('As senhas não coincidem!');
+        return;
+    }
 
-    // Criação do objeto para armazenar os dados
-    const cadastro = {
-        empresa,
-        nome,
-        celular,
-        ramo,
-        plano
+    const usuario = {
+        empresa: empresa,
+        nome: nome,
+        email: email,
+        celular: celular,
+        ramo: ramo,
+        plano: plano,
+        senha: senha
     };
 
-    // Conversão para JSON
-    const cadastroJSON = JSON.stringify(cadastro);
-
-    // Armazena no arquivo JSON
-    saveDataToJSON(cadastroJSON);
+    localStorage.setItem('usuario', JSON.stringify(usuario));
+    alert('Cadastro realizado com sucesso!');
+    window.location.href = 'login.html'; // Redireciona para a tela de login após o cadastro
 });
 
-    // Função para armazenar o dado em um arquivo JSON
-    function saveDataToJSON(data) {
-        // O código abaixo simula o salvamento local (no navegador) usando localStorage
-        // Em um ambiente de servidor, você precisaria enviar esses dados para o backend.
-        localStorage.setItem('cadastro', data);
-        
-        // Simulação de feedback ao usuário
-        alert('Dados salvos com sucesso!');
-        console.log('Dados salvos:', data);
-    }
-</script> */}

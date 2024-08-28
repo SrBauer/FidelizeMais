@@ -84,3 +84,18 @@ button {
 button:hover {
     background-color: #294c7a;
 }
+
+a {
+    background-color: #335c9d;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    text-decoration: none;
+}
+
+a:hover {
+    background-color: #294c7a;
+}

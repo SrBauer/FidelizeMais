@@ -1,8 +1,8 @@
 body {
     font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
 }
 
 .dashboard {
@@ -11,200 +11,84 @@ body {
     padding: 20px;
 }
 
-.dashboard-header h1 {
-    font-size: 24px;
+.dashboard-header {
     text-align: center;
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    border-radius: 5px;
 }
 
 .dashboard-welcome {
-    background-color: #e0f7fa;
-    padding: 10px;
-    margin-bottom: 20px;
     text-align: center;
+    margin: 20px 0;
 }
 
 .dashboard-buttons {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     margin-bottom: 20px;
 }
 
 .button {
-    padding: 15px 30px;
-    color: #fff;
+    padding: 10px 20px;
     border: none;
     border-radius: 5px;
+    color: white;
     cursor: pointer;
     font-size: 16px;
 }
 
-.button.blue {
-    background-color: #2196f3;
+.blue { background-color: #007bff; }
+.green { background-color: #28a745; }
+.orange { background-color: #fd7e14; }
+.purple { background-color: #6f42c1; }
+
+.section {
+    padding: 15px;
+    margin-top: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-.button.green {
-    background-color: #4caf50;
+.section h2 {
+    margin-top: 0;
+    color: #333;
 }
 
-.button.orange {
-    background-color: #ff9800;
-}
+.blue-bg { background-color: #e7f3ff; }
+.green-bg { background-color: #e8f5e9; }
+.orange-bg { background-color: #fff4e6; }
+.purple-bg { background-color: #f3e6ff; }
 
-.button.purple {
-    background-color: #9c27b0;
+.close-btn {
+    float: right;
+    font-size: 20px;
+    cursor: pointer;
+    background: none;
+    border: none;
+    color: #333;
 }
 
 .dashboard-sections {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-}
-
-.section {
-    background-color: #fff;
+    justify-content: space-around;
     padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);body {
-        font-family: Arial, sans-serif;
-        margin: 0;
-        padding: 0;
-        background-color: #f4f4f4;
-    }
-    
-    .dashboard {
-        max-width: 1200px;
-        margin: 0 auto;
-        padding: 20px;
-    }
-    
-    .dashboard-header h1 {
-        font-size: 24px;
-        text-align: center;
-    }
-    
-    .dashboard-welcome {
-        background-color: #e0f7fa;
-        padding: 10px;
-        margin-bottom: 20px;
-        text-align: center;
-    }
-    
-    .dashboard-buttons {
-        display: flex;
-        justify-content: space-around;
-        margin-bottom: 20px;
-    }
-    
-    .button {
-        padding: 15px 30px;
-        color: #fff;
-        border: none;
-        border-radius: 5px;
-        cursor: pointer;
-        font-size: 16px;
-    }
-    
-    .button.blue {
-        background-color: #2196f3;
-    }
-    
-    .button.green {
-        background-color: #4caf50;
-    }
-    
-    .button.orange {
-        background-color: #ff9800;
-    }
-    
-    .button.purple {
-        background-color: #9c27b0;
-    }
-    
-    .dashboard-sections {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        margin-bottom: 20px;
-    }
-    
-    .section {
-        background-color: #fff;
-        padding: 20px;
-        border-radius: 5px;
-        box-shadow: 0 0 10px rgba(0,0,0,0.1);
-        width: 30%;
-        margin-bottom: 20px;
-        position: relative;
-    }
-    
-    .section h2 {
-        font-size: 18px;
-        margin-bottom: 10px;
-    }
-    
-    .section.hidden {
-        display: none;
-    }
-    
-    .blue-bg {
-        background-color: #2196f3;
-        color: #fff;
-    }
-    
-    .green-bg {
-        background-color: #4caf50;
-        color: #fff;
-    }
-    
-    .orange-bg {
-        background-color: #ff9800;
-        color: #fff;
-    }
-    
-    .purple-bg {
-        background-color: #9c27b0;
-        color: #fff;
-    }
-    
-    .hidden {
-        display: none;
-    }
-    
-    .form-section {
-        width: 100%;
-        margin-bottom: 20px;
-        transition: all 0.3s ease;
-    }
-    
-    .close-btn {
-        position: absolute;
-        top: 10px;
-        right: 10px;
-        background-color: #f44336;
-        color: white;
-        border: none;
-        border-radius: 50%;
-        width: 30px;
-        height: 30px;
-        cursor: pointer;
-        font-size: 20px;
-        line-height: 30px;
-        text-align: center;
-    }
-    
+    background-color: #f0f0f0;
+}
+
+.dashboard-sections .section {
     width: 30%;
-    margin-bottom: 20px;
+    padding: 15px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-.section h2 {
-    font-size: 18px;
-    margin-bottom: 10px;
+.dashboard-sections .section:last-child {
+    margin-right: 0;
 }
 
-.dashboard-sections .section.hidden {
-    display: none;
-}
-
-.dashboard-sections .section:not(.hidden) {
-    display: block;
+.dashboard-buttons + .section {
+    margin-top: 20px;
 }

@@ -2,15 +2,22 @@ let clientes = [];
 let premios = [];
 
 function showSection(sectionId) {
-    document.querySelectorAll('.form-section').forEach(section => {
+    document.querySelectorAll('.section').forEach(section => {
         section.classList.add('hidden');
     });
+
+    document.getElementById(sectionId).style.display = 'block';
     document.getElementById(sectionId).classList.remove('hidden');
 
- }
+    // Ajustar a posição da seção
+    const button = document.querySelector(`.button.${sectionId.split('-')[0]}-bg`);
+    const offsetTop = button.offsetTop + button.offsetHeight + 10;
+    document.getElementById(sectionId).style.top = `${offsetTop}px`;
+}
 
 function hideSection(sectionId) {
     document.getElementById(sectionId).classList.add('hidden');
+    document.getElementById(sectionId).style.display = 'none';
 }
 
 function cadastrarCliente() {
@@ -68,45 +75,50 @@ function pesquisarCliente() {
     });
 }
 
+    
 function adicionarPremio() {
     const premio = document.getElementById('premio').value;
-    if (premio) {
-        premios.push(premio);
+    const pontosNecessarios = document.getElementById('pontosNecessarios').value;
+
+    if (premio && pontosNecessarios) {
+        premios.push({ nome: premio, pontos: parseInt(pontosNecessarios) });
         localStorage.setItem('premios', JSON.stringify(premios));
         listarPremios();
         document.getElementById('premiosForm').reset();
+    } else {
+        alert('Por favor, preencha todos os campos.');
     }
 }
 
 function listarPremios() {
     const premiosList = document.getElementById('premiosList');
     premiosList.innerHTML = '';
-    premios.forEach((premio, index) => {
+    premios.forEach(premio => {
         let li = document.createElement('li');
-        li.innerText = premio;
+        li.innerText = `${premio.nome} - ${premio.pontos} pontos necessários`;
         premiosList.appendChild(li);
     });
 }
-
-function atualizarDadosClientes() {
-    document.querySelector('.clientes p:nth-child(2)').innerText = `${clientes.length} Cartões Cadastrados`;
-    document.querySelector('.clientes p:nth-child(3)').innerText = `${clientes.filter(c => c.pontos > 0).length} Ativos`;
-    document.querySelector('.clientes p:nth-child(4)').innerText = `${clientes.filter(c => c.pontos === 0).length} Cancelados`;
-
-    const recorrentes = clientes.filter(c => c.pontos > 10).length;
-    document.querySelector('.comportamento p:nth-child(2)').innerText = `${recorrentes} Clientes Recorrentes`;
-    const ticketMedio = clientes.length > 0 ? (clientes.reduce((sum, cliente) => sum + cliente.pontos, 0) / clientes.length).toFixed(2) : 0;
-    document.querySelector('.comportamento p:nth-child(3)').innerText = `R$ ${ticketMedio} Ticket Médio`;
-}
-
-document.addEventListener('DOMContentLoaded', () => {
-    if (localStorage.getItem('clientes')) {
-        clientes = JSON.parse(localStorage.getItem('clientes'));
+    function atualizarDadosClientes() {
+        document.querySelector('.clientes p:nth-child(2)').innerText = `${clientes.length} Cartões Cadastrados`;
+        document.querySelector('.clientes p:nth-child(3)').innerText = `${clientes.filter(c => c.pontos > 0).length} Ativos`;
+        document.querySelector('.clientes p:nth-child(4)').innerText = `${clientes.filter(c => c.pontos === 0).length} Cancelados`;
+    
+        const recorrentes = clientes.filter(c => c.pontos > 10).length;
+        document.querySelector('.comportamento p:nth-child(2)').innerText = `${recorrentes} Clientes Recorrentes`;
+        const ticketMedio = clientes.length > 0 ? (clientes.reduce((sum, cliente) => sum + cliente.pontos, 0) / clientes.length).toFixed(2) : 0;
+        document.querySelector('.comportamento p:nth-child(3)').innerText = `R$ ${ticketMedio} Ticket Médio`;
     }
-    if (localStorage.getItem('premios')) {
-        premios = JSON.parse(localStorage.getItem('premios'));
-    }
-    listarMembros();
-    listarPremios();
-    atualizarDadosClientes();
-});
+    
+    document.addEventListener('DOMContentLoaded', () => {
+        if (localStorage.getItem('clientes')) {
+            clientes = JSON.parse(localStorage.getItem('clientes'));
+        }
+        if (localStorage.getItem('premios')) {
+            premios = JSON.parse(localStorage.getItem('premios'));
+        }
+        listarMembros();
+        listarPremios();
+        atualizarDadosClientes();
+    });
+    
