@@ -1,4 +1,4 @@
-document.querySelector('form').addEventListener('submit', function(event) {
+document.getElementById('cadastroForm').addEventListener('submit', function(event) {
     event.preventDefault();
 
     const empresa = document.getElementById('empresa').value;
@@ -29,4 +29,3 @@ document.querySelector('form').addEventListener('submit', function(event) {
     alert('Cadastro realizado com sucesso!');
     window.location.href = 'login.html'; // Redireciona para a tela de login após o cadastro
 });
-

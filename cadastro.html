@@ -15,9 +15,8 @@
         </header>
         <div class="form-container">
             <h3>Dados Cadastrais</h3>
-            <p class="info">Atenção: Preencha os dados abaixo para habilitar sua conta e ter acesso ao Painel de
-                Controle.</p>
-            <form>
+            <p class="info">Atenção: Preencha os dados abaixo para habilitar sua conta e ter acesso ao Painel de Controle.</p>
+            <form id="cadastroForm"> <!-- Adicione um ID ao formulário -->
                 <div class="form-group">
                     <label id="lblEmpresa" for="empresa">Empresa:</label>
                     <input type="text" id="empresa" name="empresa">
@@ -27,7 +26,7 @@
                     <input type="text" id="nome" name="nome">
                 </div>
                 <div class="form-group">
-                    <label id="lblEmail" for="E-mail">Seu E-mail</label>
+                    <label id="lblEmail" for="E-mail">Seu E-mail:</label>
                     <input type="text" id="E-mail" name="E-mail">
                 </div>
                 <div class="form-group">
@@ -44,9 +43,7 @@
                         <option value="restaurante">Restaurante</option>
                         <option value="cafeteria">Cafeteria</option>
                         <option value="altomotivo">Altomotivo</option>
-                        <option value="vestuario">Vestuario</option>
-
-                        <!-- Adicione outras opções conforme necessário -->
+                        <option value="vestuario">Vestuário</option>
                     </select>
                 </div>
                 <div class="form-group">
@@ -61,19 +58,16 @@
                     <input type="password" id="password" name="password">
                 </div>
                 <div class="form-group">
-                    <label id="lblConfirma" for="confirmaSenha">Cofirme sua Senha:</label>
+                    <label id="lblConfirma" for="confirmaSenha">Confirme sua Senha:</label>
                     <input type="password" id="confirmaSenha" name="confirmaSenha">
                 </div>
-                <button onclick="submit">Cadastrar</button>
+                <button type="submit">Cadastrar</button> <!-- Use type="submit" -->
                 <a href="./index.html" class="btn-voltar">Voltar</a>
             </form>
-
         </div>
-
     </div>
 
-    <script src="assets/js/script.js"></script>
-
+    <script src="assets/js/cadastro.js"></script>
 </body>
 
 </html>

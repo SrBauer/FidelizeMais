@@ -45,8 +45,19 @@
         <div id="membros" class="section hidden green-bg">
             <button class="close-btn" onclick="hideSection('membros')">&times;</button>
             <h2>Membros</h2>
-            <ul id="membrosList"></ul>
+            <table id="membrosTable">
+                <thead>
+                    <tr>
+                        <th>Nome</th>
+                        <th>Telefone</th>
+                        <th>Pontos</th>
+                        <th>Resgatar Prêmio</th>
+                    </tr>
+                </thead>
+                <tbody id="membrosList"></tbody>
+            </table>
         </div>
+               
 
         <div id="pontuar" class="section hidden orange-bg">
             <button class="close-btn" onclick="hideSection('pontuar')">&times;</button>

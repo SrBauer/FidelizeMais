@@ -92,3 +92,52 @@ body {
 .dashboard-buttons + .section {
     margin-top: 20px;
 }
+
+#membrosTable {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+#membrosTable th, #membrosTable td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+#membrosTable th {
+    background-color: #67c089; /* Cor de fundo do cabeçalho da tabela */
+    color: white;
+    text-align: center;
+}
+
+#membrosTable tbody tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+#membrosTable tbody tr:hover {
+    background-color: #f1f1f1;
+    cursor: pointer;
+}
+
+#membrosTable td {
+    text-align: center;
+}
+
+#membrosTable td button {
+    padding: 5px 10px;
+    background-color: #007bff;
+    border: none;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#membrosTable td button:hover {
+    background-color: #0056b3;
+}
+
