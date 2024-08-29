@@ -10,7 +10,7 @@ function showSection(sectionId) {
     document.getElementById(sectionId).classList.remove('hidden');
 
     const button = document.querySelector(`.button.${sectionId.split('-')[0]}-bg`);
-    const offsetTop = button.offsetTop + button.offsetHeight + 10;
+    const offsetTop = button ? button.offsetTop + button.offsetHeight + 10 : 0;
     document.getElementById(sectionId).style.top = `${offsetTop}px`;
 }
 
@@ -22,12 +22,10 @@ function hideSection(sectionId) {
 function cadastrarCliente() {
     const nome = document.getElementById('nome').value;
     const telefone = document.getElementById('telefone').value;
-    const sexo = document.getElementById('sexo').value;
 
     const cliente = {
         nome: nome,
         telefone: telefone,
-        sexo: sexo,
         pontos: 0
     };
 
@@ -44,7 +42,6 @@ function listarMembros() {
     membrosList.innerHTML = '';
     clientes.forEach((cliente, index) => {
         let tr = document.createElement('tr');
-        
         tr.innerHTML = `
             <td>${cliente.nome}</td>
             <td>${cliente.telefone}</td>
@@ -54,7 +51,6 @@ function listarMembros() {
                 <button onclick="resgatarPremio(${index})">Resgatar</button>
             </td>
         `;
-        
         membrosList.appendChild(tr);
     });
 }
@@ -71,13 +67,21 @@ function adicionarPontos(index) {
 
 function resgatarPremio(index) {
     let cliente = clientes[index];
-    let premioElegivel = premios.find(premio => cliente.pontos >= premio.pontos);
-    
-    if (premioElegivel) {
-        alert(`${cliente.nome} resgatou o prêmio ${premioElegivel.nome}!`);
-        cliente.pontos -= premioElegivel.pontos;
-        localStorage.setItem('clientes', JSON.stringify(clientes));
-        listarMembros();
+    let premiosElegiveis = premios.filter(premio => cliente.pontos >= premio.pontos);
+
+    if (premiosElegiveis.length > 0) {
+        let opcoes = premiosElegiveis.map((premio, i) => `${i + 1}. ${premio.nome} (${premio.pontos} pontos)`).join('\n');
+        let escolha = prompt(`Escolha um prêmio:\n${opcoes}`);
+        let premioSelecionado = premiosElegiveis[parseInt(escolha) - 1];
+
+        if (premioSelecionado) {
+            alert(`${cliente.nome} resgatou o prêmio ${premioSelecionado.nome}!`);
+            cliente.pontos -= premioSelecionado.pontos;
+            localStorage.setItem('clientes', JSON.stringify(clientes));
+            listarMembros();
+        } else {
+            alert('Escolha inválida.');
+        }
     } else {
         alert('Pontos insuficientes para resgatar um prêmio.');
     }
@@ -100,10 +104,65 @@ function adicionarPremio() {
 function listarPremios() {
     const premiosList = document.getElementById('premiosList');
     premiosList.innerHTML = '';
-    premios.forEach(premio => {
-        let li = document.createElement('li');
-        li.innerText = `${premio.nome} - ${premio.pontos} pontos necessários`;
-        premiosList.appendChild(li);
+    premios.forEach((premio, index) => {
+        let tr = document.createElement('tr');
+        tr.innerHTML = `
+            <td>${premio.nome}</td>
+            <td>${premio.pontos}</td>
+            <td>
+                <button onclick="editarPremio(${index})">Editar</button>
+                <button onclick="excluirPremio(${index})">Excluir</button>
+            </td>
+        `;
+        premiosList.appendChild(tr);
+    });
+}
+
+function editarPremio(index) {
+    const novoNome = prompt('Novo nome do prêmio:', premios[index].nome);
+    const novosPontos = prompt('Nova quantidade de pontos:', premios[index].pontos);
+    
+    if (novoNome && novosPontos && !isNaN(novosPontos)) {
+        premios[index].nome = novoNome;
+        premios[index].pontos = parseInt(novosPontos);
+        localStorage.setItem('premios', JSON.stringify(premios));
+        listarPremios();
+    } else {
+        alert('Por favor, insira valores válidos.');
+    }
+}
+
+function excluirPremio(index) {
+    if (confirm('Tem certeza que deseja excluir este prêmio?')) {
+        premios.splice(index, 1);
+        localStorage.setItem('premios', JSON.stringify(premios));
+        listarPremios();
+    }
+}
+
+function pesquisarCliente() {
+    const input = document.getElementById('pesquisa').value.toLowerCase();
+    const resultadoPesquisa = clientes.filter(cliente => 
+        cliente.nome.toLowerCase().includes(input) || cliente.telefone.includes(input)
+    );
+
+    const membrosList = document.getElementById('membrosList');
+    membrosList.innerHTML = '';
+
+    resultadoPesquisa.forEach((cliente, index) => {
+        let tr = document.createElement('tr');
+        
+        tr.innerHTML = `
+            <td>${cliente.nome}</td>
+            <td>${cliente.telefone}</td>
+            <td>${cliente.pontos}</td>
+            <td>
+                <button onclick="adicionarPontos(${index})">Adicionar Pontos</button>
+                <button onclick="resgatarPremio(${index})">Resgatar</button>
+            </td>
+        `;
+        
+        membrosList.appendChild(tr);
     });
 }
 

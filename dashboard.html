@@ -76,8 +76,18 @@
                 <input type="number" id="pontosNecessarios" name="pontosNecessarios"><br><br>
                 <button type="button" onclick="adicionarPremio()">Adicionar Prêmio</button>
             </form>
-            <ul id="premiosList"></ul>
+            <table id="premiosTable">
+                <thead>
+                    <tr>
+                        <th>Nome do Prêmio</th>
+                        <th>Pontos Necessários</th>
+                        <th>Ações</th>
+                    </tr>
+                </thead>
+                <tbody id="premiosList"></tbody>
+            </table>
         </div>
+        
     </div>
     
     <div class="dashboard-sections">
