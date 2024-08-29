@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard</title>
     <link rel="stylesheet" href="./assets/css/dashboard.css">
 </head>
+
 <body>
     <div class="dashboard">
         <header class="dashboard-header">
@@ -18,8 +20,8 @@
 
         <div class="dashboard-buttons">
             <button class="button blue" onclick="showSection('cadastrar')">Cadastrar</button>
-            <button class="button green" onclick="showSection('membros')">Membros</button>
             <button class="button orange" onclick="showSection('pontuar')">Pesquisar</button>
+            <button class="button green" onclick="showSection('membros')">Membros</button>
             <button class="button purple" onclick="showSection('premiar')">Premiar</button>
         </div>
 
@@ -42,6 +44,13 @@
             </form>
         </div>
 
+        <div id="pontuar" class="section hidden orange-bg">
+            <button class="close-btn" onclick="hideSection('pontuar')">&times;</button>
+            <h2>Pesquisar Cliente</h2>
+            <input type="text" id="pesquisa" onkeyup="pesquisarCliente()" placeholder="Digite nome ou telefone...">
+            <ul id="resultadoPesquisa"></ul>
+        </div>
+
         <div id="membros" class="section hidden green-bg">
             <button class="close-btn" onclick="hideSection('membros')">&times;</button>
             <h2>Membros</h2>
@@ -51,20 +60,14 @@
                         <th>Nome</th>
                         <th>Telefone</th>
                         <th>Pontos</th>
-                        <th>Resgatar Prêmio</th>
+                        <th></th>
                     </tr>
                 </thead>
                 <tbody id="membrosList"></tbody>
             </table>
         </div>
-               
 
-        <div id="pontuar" class="section hidden orange-bg">
-            <button class="close-btn" onclick="hideSection('pontuar')">&times;</button>
-            <h2>Pesquisar Cliente</h2>
-            <input type="text" id="pesquisa" onkeyup="pesquisarCliente()" placeholder="Digite nome ou telefone...">
-            <ul id="resultadoPesquisa"></ul>
-        </div>
+
 
         <div id="premiar" class="section hidden purple-bg">
             <button class="close-btn" onclick="hideSection('premiar')">&times;</button>
@@ -81,15 +84,15 @@
                     <tr>
                         <th>Nome do Prêmio</th>
                         <th>Pontos Necessários</th>
-                        <th>Ações</th>
+                        <th></th>
                     </tr>
                 </thead>
                 <tbody id="premiosList"></tbody>
             </table>
         </div>
-        
+
     </div>
-    
+
     <div class="dashboard-sections">
         <div class="section clientes">
             <h2>Clientes</h2>
@@ -107,4 +110,5 @@
 
     <script src="./assets/js/dashboard.js"></script>
 </body>
+
 </html>

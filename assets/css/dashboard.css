@@ -27,6 +27,7 @@ body {
 .dashboard-buttons {
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
     margin-bottom: 20px;
 }
 
@@ -37,6 +38,9 @@ body {
     color: white;
     cursor: pointer;
     font-size: 16px;
+    flex: 1;
+    margin: 5px;
+    text-align: center;
 }
 
 .blue { background-color: #007bff; }
@@ -75,6 +79,7 @@ body {
     justify-content: space-around;
     padding: 20px;
     background-color: #f0f0f0;
+    flex-wrap: wrap;
 }
 
 .dashboard-sections .section {
@@ -83,6 +88,7 @@ body {
     background-color: #fff;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin: 10px;
 }
 
 .dashboard-sections .section:last-child {
@@ -176,4 +182,47 @@ button {
     cursor: pointer;
 }
 
+/* Media Queries para Responsividade */
+@media screen and (max-width: 768px) {
+    .dashboard {
+        padding: 10px;
+    }
 
+    .dashboard-buttons {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .dashboard-buttons .button {
+        margin: 5px 0;
+    }
+
+    .dashboard-sections {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .dashboard-sections .section {
+        width: 100%;
+    }
+
+    #membrosTable, #membrosTable th, #membrosTable td {
+        font-size: 14px;
+        padding: 8px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .dashboard-header h1 {
+        font-size: 24px;
+    }
+
+    .button {
+        font-size: 14px;
+        padding: 10px;
+    }
+
+    .dashboard-sections .section {
+        padding: 10px;
+    }
+}
