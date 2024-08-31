@@ -1,9 +1,10 @@
 # FidelizeMais
 API de fidelização de cliente
 
-SITE 
+# SITE 
 https://srbauer.github.io/FidelizeMais/
 
+#Telas
 verção inicial da tela inicial
 
 ![Captura de tela 2024-08-06 141347](https://github.com/user-attachments/assets/4c9c0565-4d7f-4cd4-9bb3-9251838b915f)
@@ -24,7 +25,7 @@ verção inicial da tela Dashboard
 ![image](https://github.com/user-attachments/assets/49ba574e-8a69-4cdc-9c0f-168e39bfc0c3)
 
 
-Funcionabilidade Implementadas no Softwer
+# Funcionabilidade Implementadas no Softwer
 
 Cadastro de Clientes:
 Formulário para cadastrar novos clientes, incluindo campos como nome, telefone, e-mail, ramo de atividade, etc.
@@ -62,7 +63,7 @@ Navegação dinâmica entre as seções "Membros" e "Premiar" por meio de botõe
 
 
 
-Implementação futuras para próximos passos do softwer.
+# Implementação futuras para próximos passos do softwer.
 
 Cupons de Desconto:
 Introduzir cupons de desconto como prêmios que os clientes podem resgatar usando seus pontos.
