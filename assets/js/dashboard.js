@@ -177,6 +177,13 @@ function atualizarDadosClientes() {
     document.querySelector('.comportamento p:nth-child(3)').innerText = `R$ ${ticketMedio} Ticket Médio`;
 }
 
+function sair() {
+    if (confirm('Tem certeza que deseja sair?')) {
+        // Aqui você pode adicionar lógica para limpar dados da sessão, se necessário
+        window.location.href = 'login.html'; // Redireciona para a página de login
+    }
+}
+
 document.addEventListener('DOMContentLoaded', () => {
     if (localStorage.getItem('clientes')) {
         clientes = JSON.parse(localStorage.getItem('clientes'));
@@ -187,4 +194,6 @@ document.addEventListener('DOMContentLoaded', () => {
     listarMembros();
     listarPremios();
     atualizarDadosClientes();
+
+    document.getElementById('sairButton').addEventListener('click', sair);
 });
