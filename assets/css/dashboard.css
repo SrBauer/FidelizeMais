@@ -76,19 +76,22 @@ body {
 
 .dashboard-sections {
     display: flex;
-    justify-content: space-around;
+    flex-wrap: wrap;
+    justify-content: space-between;
     padding: 20px;
     background-color: #f0f0f0;
     flex-wrap: wrap;
+    margin-top: 20px; /* Adicione uma margem superior para separar das seções dinâmicas */
 }
 
 .dashboard-sections .section {
-    width: 30%;
+    width: calc(25% - 20px);
     padding: 15px;
     background-color: #fff;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     margin: 10px;
+    margin-bottom: 20px;
 }
 
 .dashboard-sections .section:last-child {
@@ -235,4 +238,61 @@ button {
     right: 10px;
     padding: 5px 10px;
     font-size: 14px;
+}
+
+.dynamic-section {
+    display: none;
+}
+
+.dynamic-section.hidden {
+    display: none;
+}
+
+#resultadoPesquisa table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+#resultadoPesquisa th, #resultadoPesquisa td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+#resultadoPesquisa th {
+    background-color: #fd7e14;
+    color: white;
+    text-align: center;
+}
+
+#resultadoPesquisa tbody tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+#resultadoPesquisa tbody tr:hover {
+    background-color: #f1f1f1;
+    cursor: pointer;
+}
+
+#resultadoPesquisa td {
+    text-align: center;
+}
+
+#resultadoPesquisa td button {
+    padding: 5px 10px;
+    background-color: #007bff;
+    border: none;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 2px;
+}
+
+#resultadoPesquisa td button:hover {
+    background-color: #0056b3;
 }

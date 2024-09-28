@@ -20,14 +20,14 @@
         </div>
 
         <div class="dashboard-buttons">
-            <button class="button blue" onclick="showSection('cadastrar')">Cadastrar</button>
-            <button class="button orange" onclick="showSection('pontuar')">Pesquisar</button>
-            <button class="button green" onclick="showSection('membros')">Membros</button>
-            <button class="button purple" onclick="showSection('premiar')">Premiar</button>
+            <button class="button blue" data-section="cadastrar">Cadastrar</button>
+            <button class="button orange" data-section="pontuar">Pesquisar</button>
+            <button class="button green" data-section="membros">Membros</button>
+            <button class="button purple" data-section="premiar">Premiar</button>
         </div>
 
         <!-- Seções dinâmicas -->
-        <div id="cadastrar" class="section hidden blue-bg">
+        <div id="cadastrar" class="section dynamic-section hidden blue-bg">
             <button class="close-btn" onclick="hideSection('cadastrar')">&times;</button>
             <h2>Cadastrar Novo Cliente</h2>
             <form id="cadastroForm">
@@ -45,14 +45,14 @@
             </form>
         </div>
 
-        <div id="pontuar" class="section hidden orange-bg">
+        <div id="pontuar" class="section dynamic-section hidden orange-bg">
             <button class="close-btn" onclick="hideSection('pontuar')">&times;</button>
             <h2>Pesquisar Cliente</h2>
             <input type="text" id="pesquisa" onkeyup="pesquisarCliente()" placeholder="Digite nome ou telefone...">
-            <ul id="resultadoPesquisa"></ul>
+            <div id="resultadoPesquisa"></div>
         </div>
 
-        <div id="membros" class="section hidden green-bg">
+        <div id="membros" class="section dynamic-section hidden green-bg">
             <button class="close-btn" onclick="hideSection('membros')">&times;</button>
             <h2>Membros</h2>
             <table id="membrosTable">
@@ -68,9 +68,7 @@
             </table>
         </div>
 
-
-
-        <div id="premiar" class="section hidden purple-bg">
+        <div id="premiar" class="section dynamic-section hidden purple-bg">
             <button class="close-btn" onclick="hideSection('premiar')">&times;</button>
             <h2>Premiar</h2>
             <form id="premiosForm">
@@ -92,21 +90,34 @@
             </table>
         </div>
 
-    </div>
+        <!-- Seções sempre visíveis -->
+        <div class="dashboard-sections">
+            <div class="section clientes">
+                <h2>Clientes</h2>
+                <p>0 Cartões Cadastrados</p>
+                <p>0 Ativos</p>
+                <p>0 Cancelados</p>
+            </div>
+            <div class="section comportamento">
+                <h2>Comportamento</h2>
+                <p>0 Clientes Recorrentes</p>
+                <p>R$ 0,00 Ticket Médio</p>
+                <p>0 dias Recorrência</p>
+            </div>
+            <div class="section vendas">
+                <h2>Vendas</h2>
+                <p>NOVAS: <span id="novas-vendas">0</span> pontos</p>
+                <p>PREMIADAS: <span id="premiadas">0</span></p>
+                <p>PRÓXIMO A BONIFICAR: <span id="proximo-bonificar">0</span></p>
+            </div>
+            <div class="section perfil-cliente">
+                <h2>Perfil Cliente</h2>
+                <p>HOMENS: <span id="percentual-homens">0%</span></p>
+                <p>MULHERES: <span id="percentual-mulheres">0%</span></p>
+                <p>OUTROS: <span id="percentual-outros">0%</span></p>
+            </div>
+        </div>
 
-    <div class="dashboard-sections">
-        <div class="section clientes">
-            <h2>Clientes</h2>
-            <p>0 Cartões Cadastrados</p>
-            <p>0 Ativos</p>
-            <p>0 Cancelados</p>
-        </div>
-        <div class="section comportamento">
-            <h2>Comportamento</h2>
-            <p>0 Clientes Recorrentes</p>
-            <p>R$ 0,00 Ticket Médio</p>
-            <p>0 dias Recorrência</p>
-        </div>
     </div>
 
     <script src="./assets/js/dashboard.js"></script>

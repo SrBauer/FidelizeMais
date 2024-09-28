@@ -2,16 +2,25 @@ let clientes = [];
 let premios = [];
 
 function showSection(sectionId) {
-    document.querySelectorAll('.section').forEach(section => {
-        section.classList.add('hidden');
+    const section = document.getElementById(sectionId);
+    const isHidden = section.classList.contains('hidden');
+
+    // Esconde todas as seções dinâmicas
+    document.querySelectorAll('.dynamic-section').forEach(s => {
+        s.classList.add('hidden');
+        s.style.display = 'none';
     });
 
-    document.getElementById(sectionId).style.display = 'block';
-    document.getElementById(sectionId).classList.remove('hidden');
+    if (isHidden) {
+        // Se a seção estava escondida, mostra ela
+        section.style.display = 'block';
+        section.classList.remove('hidden');
 
-    const button = document.querySelector(`.button.${sectionId.split('-')[0]}-bg`);
-    const offsetTop = button ? button.offsetTop + button.offsetHeight + 10 : 0;
-    document.getElementById(sectionId).style.top = `${offsetTop}px`;
+        const button = document.querySelector(`.button[data-section="${sectionId}"]`);
+        const offsetTop = button ? button.offsetTop + button.offsetHeight + 10 : 0;
+        section.style.top = `${offsetTop}px`;
+    }
+    // Se a seção não estava escondida, ela permanecerá escondida
 }
 
 function hideSection(sectionId) {
@@ -22,25 +31,32 @@ function hideSection(sectionId) {
 function cadastrarCliente() {
     const nome = document.getElementById('nome').value;
     const telefone = document.getElementById('telefone').value;
+    const sexo = document.getElementById('sexo').value;
 
     const cliente = {
         nome: nome,
         telefone: telefone,
-        pontos: 0
+        sexo: sexo,
+        pontos: 0,
+        historicoPontos: []
     };
 
     clientes.push(cliente);
     localStorage.setItem('clientes', JSON.stringify(clientes));
     alert('Cliente cadastrado com sucesso!');
     document.getElementById('cadastroForm').reset();
-    atualizarDadosClientes();
+    atualizarDashboard();
     listarMembros();
 }
 
 function listarMembros() {
     const membrosList = document.getElementById('membrosList');
     membrosList.innerHTML = '';
-    clientes.forEach((cliente, index) => {
+
+    // Ordena os clientes por nome em ordem alfabética
+    const clientesOrdenados = clientes.sort((a, b) => a.nome.localeCompare(b.nome));
+
+    clientesOrdenados.forEach((cliente, index) => {
         let tr = document.createElement('tr');
         tr.innerHTML = `
             <td>${cliente.nome}</td>
@@ -59,10 +75,15 @@ function adicionarPontos(index) {
     let pontos = prompt('Quantos pontos deseja adicionar?');
     if (isNaN(pontos) || pontos === null) return;
 
-    clientes[index].pontos += parseInt(pontos);
+    pontos = parseInt(pontos);
+    clientes[index].pontos += pontos;
+    clientes[index].historicoPontos.push({
+        data: new Date().toISOString(),
+        pontos: pontos
+    });
     localStorage.setItem('clientes', JSON.stringify(clientes));
     listarMembros();
-    atualizarDadosClientes();
+    atualizarDashboard();
 }
 
 function resgatarPremio(index) {
@@ -146,24 +167,45 @@ function pesquisarCliente() {
         cliente.nome.toLowerCase().includes(input) || cliente.telefone.includes(input)
     );
 
-    const membrosList = document.getElementById('membrosList');
-    membrosList.innerHTML = '';
+    // Ordena os resultados da pesquisa por nome
+    resultadoPesquisa.sort((a, b) => a.nome.localeCompare(b.nome));
 
-    resultadoPesquisa.forEach((cliente, index) => {
-        let tr = document.createElement('tr');
-        
-        tr.innerHTML = `
-            <td>${cliente.nome}</td>
-            <td>${cliente.telefone}</td>
-            <td>${cliente.pontos}</td>
-            <td>
-                <button onclick="adicionarPontos(${index})">Adicionar Pontos</button>
-                <button onclick="resgatarPremio(${index})">Resgatar</button>
-            </td>
+    const resultadoDiv = document.getElementById('resultadoPesquisa');
+    resultadoDiv.innerHTML = '';
+
+    if (resultadoPesquisa.length === 0) {
+        resultadoDiv.innerHTML = '<p>Nenhum cliente encontrado.</p>';
+    } else {
+        const table = document.createElement('table');
+        table.innerHTML = `
+            <thead>
+                <tr>
+                    <th>Nome</th>
+                    <th>Telefone</th>
+                    <th>Pontos</th>
+                    <th>Ações</th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
         `;
-        
-        membrosList.appendChild(tr);
-    });
+
+        resultadoPesquisa.forEach((cliente) => {
+            const tr = document.createElement('tr');
+            tr.innerHTML = `
+                <td>${cliente.nome}</td>
+                <td>${cliente.telefone}</td>
+                <td>${cliente.pontos}</td>
+                <td>
+                    <button onclick="adicionarPontos(${clientes.indexOf(cliente)})">Adicionar Pontos</button>
+                    <button onclick="resgatarPremio(${clientes.indexOf(cliente)})">Resgatar</button>
+                </td>
+            `;
+            table.querySelector('tbody').appendChild(tr);
+        });
+
+        resultadoDiv.appendChild(table);
+    }
 }
 
 function atualizarDadosClientes() {
@@ -184,6 +226,53 @@ function sair() {
     }
 }
 
+function atualizarDadosVendas() {
+    const agora = new Date();
+    const ontem = new Date(agora.getTime() - 24 * 60 * 60 * 1000);
+    
+    // Calcular pontos adicionados nas últimas 24 horas
+    const novasPontos = clientes.reduce((total, cliente) => {
+        const ultimaPontuacao = cliente.historicoPontos ? cliente.historicoPontos.find(h => new Date(h.data) > ontem) : null;
+        return total + (ultimaPontuacao ? ultimaPontuacao.pontos : 0);
+    }, 0);
+
+    // Calcular clientes que podem resgatar prêmios
+    const premiadas = clientes.filter(cliente => 
+        premios.some(premio => cliente.pontos >= premio.pontos)
+    ).length;
+
+    // Calcular clientes próximos a bonificar
+    const proximoBonificar = clientes.filter(cliente => {
+        const menorPremio = Math.min(...premios.map(p => p.pontos));
+        return cliente.pontos > menorPremio - 10 && cliente.pontos < menorPremio;
+    }).length;
+
+    document.getElementById('novas-vendas').textContent = novasPontos;
+    document.getElementById('premiadas').textContent = premiadas;
+    document.getElementById('proximo-bonificar').textContent = proximoBonificar;
+}
+
+function atualizarPerfilCliente() {
+    const total = clientes.length;
+    const homens = clientes.filter(c => c.sexo === 'masculino').length;
+    const mulheres = clientes.filter(c => c.sexo === 'feminino').length;
+    const outros = total - homens - mulheres;
+
+    const percentualHomens = ((homens / total) * 100).toFixed(2);
+    const percentualMulheres = ((mulheres / total) * 100).toFixed(2);
+    const percentualOutros = ((outros / total) * 100).toFixed(2);
+
+    document.getElementById('percentual-homens').textContent = `${percentualHomens}%`;
+    document.getElementById('percentual-mulheres').textContent = `${percentualMulheres}%`;
+    document.getElementById('percentual-outros').textContent = `${percentualOutros}%`;
+}
+
+function atualizarDashboard() {
+    atualizarDadosClientes();
+    atualizarDadosVendas();
+    atualizarPerfilCliente();
+}
+
 document.addEventListener('DOMContentLoaded', () => {
     if (localStorage.getItem('clientes')) {
         clientes = JSON.parse(localStorage.getItem('clientes'));
@@ -193,7 +282,15 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     listarMembros();
     listarPremios();
-    atualizarDadosClientes();
+    atualizarDashboard();
 
     document.getElementById('sairButton').addEventListener('click', sair);
+
+    // Adiciona event listeners para os botões das abas
+    document.querySelectorAll('.dashboard-buttons .button').forEach(button => {
+        button.addEventListener('click', (e) => {
+            const sectionId = e.target.getAttribute('data-section');
+            showSection(sectionId);
+        });
+    });
 });
