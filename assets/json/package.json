@@ -1,0 +1,12 @@
+{
+  "scripts": {
+    "build": "echo 'Simulando build do projeto...' && npm run lint && npm run test",
+    "lint": "echo 'Executando linter...'",
+    "test": "echo 'Executando testes...' && cypress run",
+    "deploy": "echo 'Simulando deploy do projeto...'",
+    "ci": "npm run build && npm run deploy"
+  },
+  "devDependencies": {
+    "cypress": "^13.14.2"
+  }
+}
