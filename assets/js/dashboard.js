@@ -31,11 +31,13 @@ function hideSection(sectionId) {
 function cadastrarCliente() {
     const nome = document.getElementById('nome').value;
     const telefone = document.getElementById('telefone').value;
+    const aniversario = document.getElementById('aniversario').value;
     const sexo = document.getElementById('sexo').value;
 
     const cliente = {
         nome: nome,
         telefone: telefone,
+        aniversario: aniversario,
         sexo: sexo,
         pontos: 0,
         historicoPontos: []
@@ -61,14 +63,44 @@ function listarMembros() {
         tr.innerHTML = `
             <td>${cliente.nome}</td>
             <td>${cliente.telefone}</td>
+            <td>${formatarData(cliente.aniversario)}</td>
             <td>${cliente.pontos}</td>
             <td>
-                <button onclick="adicionarPontos(${index})">Adicionar Pontos</button>
-                <button onclick="resgatarPremio(${index})">Resgatar</button>
+                <button onclick="editarCliente(${index})" title="Editar"><i class="fas fa-edit"></i></button>
+                <button onclick="adicionarPontos(${index})" title="Adicionar Pontos"><i class="fas fa-plus-circle"></i></button>
+                <button onclick="resgatarPremio(${index})" title="Resgatar Prêmio"><i class="fas fa-gift"></i></button>
             </td>
         `;
         membrosList.appendChild(tr);
     });
+}
+
+function formatarData(data) {
+    if (!data) return '';
+    const [ano, mes, dia] = data.split('-');
+    return `${dia}/${mes}/${ano}`;
+}
+
+function editarCliente(index) {
+    const cliente = clientes[index];
+    const novoNome = prompt('Novo nome:', cliente.nome);
+    const novoTelefone = prompt('Novo telefone:', cliente.telefone);
+    const novoAniversario = prompt('Nova data de aniversário (AAAA-MM-DD):', cliente.aniversario);
+    const novoSexo = prompt('Novo sexo (masculino/feminino/outro):', cliente.sexo);
+
+    if (novoNome && novoTelefone && novoAniversario && novoSexo) {
+        cliente.nome = novoNome;
+        cliente.telefone = novoTelefone;
+        cliente.aniversario = novoAniversario;
+        cliente.sexo = novoSexo;
+
+        localStorage.setItem('clientes', JSON.stringify(clientes));
+        listarMembros();
+        atualizarDashboard();
+        alert('Cliente atualizado com sucesso!');
+    } else {
+        alert('Por favor, preencha todos os campos corretamente.');
+    }
 }
 
 function adicionarPontos(index) {
