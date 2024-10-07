@@ -163,8 +163,8 @@ function listarPremios() {
             <td>${premio.nome}</td>
             <td>${premio.pontos}</td>
             <td>
-                <button onclick="editarPremio(${index})">Editar</button>
-                <button onclick="excluirPremio(${index})">Excluir</button>
+                <button onclick="editarPremio(${index})" title="Editar"><i class="fas fa-edit"></i></button>
+                <button onclick="excluirPremio(${index})" title="Excluir"><i class="fas fa-trash-alt"></i></button>
             </td>
         `;
         premiosList.appendChild(tr);

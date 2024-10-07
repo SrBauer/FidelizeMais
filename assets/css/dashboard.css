@@ -78,24 +78,78 @@ body {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    padding: 20px;
-    background-color: #f0f0f0;
-    flex-wrap: wrap;
-    margin-top: 20px; /* Adicione uma margem superior para separar das seções dinâmicas */
+    margin-top: 20px;
+    padding: 0 15px;
 }
 
 .dashboard-sections .section {
-    width: calc(25% - 20px);
-    padding: 15px;
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    margin: 10px;
+    flex-basis: calc(50% - 10px);
     margin-bottom: 20px;
+    padding: 15px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
-.dashboard-sections .section:last-child {
-    margin-right: 0;
+.dashboard-sections .section h2 {
+    font-size: 18px;
+    color: #333;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.dashboard-sections .section p {
+    font-size: 14px;
+    color: #666;
+    margin: 5px 0;
+    text-align: center;
+}
+
+.dashboard-sections .section span {
+    font-weight: bold;
+    color: #4a4a4a;
+}
+
+/* Cores específicas para cada seção */
+.dashboard-sections .clientes {
+    border-top: 3px solid #007bff;
+}
+
+.dashboard-sections .comportamento {
+    border-top: 3px solid #28a745;
+}
+
+.dashboard-sections .vendas {
+    border-top: 3px solid #ffc107;
+}
+
+.dashboard-sections .perfil-cliente {
+    border-top: 3px solid #dc3545;
+}
+
+/* Media queries para responsividade */
+@media screen and (min-width: 768px) {
+    .dashboard-sections .section {
+        flex-basis: calc(25% - 15px);
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .dashboard-sections {
+        padding: 0 30px;
+    }
+
+    .dashboard-sections .section {
+        padding: 20px;
+    }
+
+    .dashboard-sections .section h2 {
+        font-size: 20px;
+    }
+
+    .dashboard-sections .section p {
+        font-size: 16px;
+    }
 }
 
 .dashboard-buttons + .section {
@@ -416,4 +470,140 @@ button {
 .fas {
     margin-right: 5px;
     color: #007bff;
+}
+
+/* Estilos para o formulário de prêmios */
+#premiosForm {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+#premiosForm .form-group {
+    margin-bottom: 20px;
+}
+
+#premiosForm .form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #333;
+}
+
+#premiosForm .form-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+#premiosForm .form-group input:focus {
+    outline: none;
+    border-color: #6f42c1;
+    box-shadow: 0 0 0 2px rgba(111, 66, 193, 0.25);
+}
+
+#premiosForm button {
+    width: 100%;
+    padding: 12px;
+    background-color: #6f42c1;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#premiosForm button:hover {
+    background-color: #5a32a3;
+}
+
+#premiosTable {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+#premiosTable th, #premiosTable td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+#premiosTable th {
+    background-color: #6f42c1;
+    color: white;
+    text-align: center;
+}
+
+#premiosTable tbody tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+#premiosTable tbody tr:hover {
+    background-color: #f1f1f1;
+    cursor: pointer;
+}
+
+#premiosTable td {
+    text-align: center;
+}
+
+#premiosTable td button {
+    padding: 8px;
+    margin: 2px;
+    background-color: transparent;
+    border: none;
+    color: #6f42c1;
+    cursor: pointer;
+    font-size: 16px;
+    transition: color 0.3s ease;
+}
+
+#premiosTable td button:hover {
+    color: #5a32a3;
+}
+
+/* Media queries para responsividade */
+@media screen and (min-width: 768px) {
+    #premiosForm {
+        padding: 30px;
+    }
+
+    #premiosForm .form-group {
+        display: flex;
+        align-items: center;
+    }
+
+    #premiosForm .form-group label {
+        width: 30%;
+        margin-bottom: 0;
+        margin-right: 10px;
+    }
+
+    #premiosForm .form-group input {
+        width: 70%;
+    }
+
+    #premiosForm button {
+        width: auto;
+        padding: 12px 30px;
+        margin-left: 30%;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    #premiosForm {
+        max-width: 800px;
+    }
 }
