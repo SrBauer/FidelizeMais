@@ -173,9 +173,10 @@ body {
 }
 
 #membrosTable th {
-    background-color: #67c089;
+    background-color: #007bff;
     color: white;
     text-align: center;
+    font-weight: bold;
 }
 
 #membrosTable tbody tr:nth-child(even) {
@@ -183,7 +184,7 @@ body {
 }
 
 #membrosTable tbody tr:hover {
-    background-color: #f1f1f1;
+    background-color: #e0e0e0;
     cursor: pointer;
 }
 
@@ -194,16 +195,17 @@ body {
 #membrosTable td button {
     padding: 8px;
     margin: 2px;
-    background-color: transparent;
+    background-color: #007bff;
     border: none;
-    color: #007bff;
+    color: white;
+    border-radius: 4px;
     cursor: pointer;
     font-size: 16px;
-    transition: color 0.3s ease;
+    transition: background-color 0.3s ease;
 }
 
 #membrosTable td button:hover {
-    color: #0056b3;
+    background-color: #0056b3;
 }
 
 #membrosTable td button:nth-child(1) {
@@ -310,14 +312,15 @@ button {
     }
 }
 
-.red { background-color: #dc3545; }
+.red { background-color: #5c5858; }
 
 #sairButton {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    padding: 5px 10px;
-    font-size: 14px;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    padding: 10px 20px;
+    font-size: 16px;
+    z-index: 1000;
 }
 
 .dynamic-section {
@@ -469,7 +472,7 @@ button {
 /* Estilos para os ícones */
 .fas {
     margin-right: 5px;
-    color: #007bff;
+    color: #e4e5e7;
 }
 
 /* Estilos para o formulário de prêmios */

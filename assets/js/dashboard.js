@@ -61,7 +61,7 @@ function listarMembros() {
     clientesOrdenados.forEach((cliente, index) => {
         let tr = document.createElement('tr');
         tr.innerHTML = `
-            <td>${cliente.nome}</td>
+            <td><a href="#" onclick="mostrarPerfilCliente(${index})">${cliente.nome}</a></td>
             <td>${cliente.telefone}</td>
             <td>${formatarData(cliente.aniversario)}</td>
             <td>${cliente.pontos}</td>
@@ -73,6 +73,32 @@ function listarMembros() {
         `;
         membrosList.appendChild(tr);
     });
+}
+
+function mostrarPerfilCliente(index) {
+    const cliente = clientes[index];
+    document.getElementById('perfilNome').innerText = cliente.nome;
+    document.getElementById('perfilTotalGasto').innerText = calcularTotalGasto(cliente); // Função a ser criada
+    document.getElementById('perfilUltimaCompra').innerText = calcularUltimaCompra(cliente); // Função a ser criada
+    document.getElementById('perfilEmail').innerText = cliente.email || 'N/A'; // Adicione o campo de e-mail no objeto cliente
+    document.getElementById('perfilTelefone').innerText = cliente.telefone;
+    document.getElementById('perfilEndereco').innerText = cliente.endereco || 'N/A'; // Adicione o campo de endereço no objeto cliente
+    document.getElementById('perfilPontos').innerText = cliente.pontos;
+
+    showSection('perfilCliente');
+}
+
+// Função para calcular o total gasto
+function calcularTotalGasto(cliente) {
+    // Lógica para calcular o total gasto
+    return cliente.historicoPontos.reduce((total, ponto) => total + ponto.pontos, 0); // Exemplo, ajuste conforme necessário
+}
+
+// Função para calcular o valor da última compra
+function calcularUltimaCompra(cliente) {
+    // Lógica para calcular o valor da última compra
+    const ultimaCompra = cliente.historicoPontos[cliente.historicoPontos.length - 1];
+    return ultimaCompra ? ultimaCompra.pontos : 0; // Exemplo, ajuste conforme necessário
 }
 
 function formatarData(data) {

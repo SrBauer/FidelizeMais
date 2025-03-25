@@ -13,7 +13,6 @@
     <div class="dashboard">
         <header class="dashboard-header">
             <h1>Dashboard</h1>
-            <button id="sairButton" class="button red">Sair</button>
         </header>
 
         <div class="dashboard-welcome">
@@ -107,6 +106,18 @@
             </table>
         </div>
 
+        <div id="perfilCliente" class="section dynamic-section hidden">
+            <button class="close-btn" onclick="hideSection('perfilCliente')">&times;</button>
+            <h2>Perfil do Cliente</h2>
+            <p><strong>Nome:</strong> <span id="perfilNome"></span></p>
+            <p><strong>Valor Total Gasto:</strong> R$ <span id="perfilTotalGasto"></span></p>
+            <p><strong>Valor da Última Compra:</strong> R$ <span id="perfilUltimaCompra"></span></p>
+            <p><strong>E-mail:</strong> <span id="perfilEmail"></span></p>
+            <p><strong>Telefone:</strong> <span id="perfilTelefone"></span></p>
+            <p><strong>Endereço:</strong> <span id="perfilEndereco"></span></p>
+            <p><strong>Pontos Totais:</strong> <span id="perfilPontos"></span></p>
+        </div>
+
         <!-- Seções sempre visíveis -->
         <div class="dashboard-sections">
             <div class="section clientes">
@@ -134,7 +145,7 @@
                 <p>OUTROS: <span id="percentual-outros">0%</span></p>
             </div>
         </div>
-
+        <button id="sairButton" class="button red">Sair</button>
     </div>
 
     <script src="./assets/js/dashboard.js"></script>
