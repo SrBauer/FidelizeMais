@@ -1,122 +1,161 @@
+/* ========================================
+   VARIÁVEIS CSS - Cores e valores principais
+   ======================================== */
+:root {
+    /* Cores principais */
+    --primary-color: #007bff;
+    --secondary-color: #28a745;
+    --warning-color: #fd7e14;
+    --danger-color: #dc3545;
+    --purple-color: #6f42c1;
+    --success-color: #4CAF50;
+    --gray-color: #5c5858;
+    --gold-color: #fadf46;
+    
+    /* Cores de fundo */
+    --bg-primary: #e7f3ff;
+    --bg-secondary: #e8f5e9;
+    --bg-warning: #fff4e6;
+    --bg-purple: #f3e6ff;
+    --bg-light: #f4f4f4;
+    --bg-white: #ffffff;
+    --bg-gray: #f2f2f2;
+    --bg-gold: #fff9e6;
+    
+    /* Cores de texto */
+    --text-dark: #333;
+    --text-light: #666;
+    --text-white: #ffffff;
+    --text-muted: #4a4a4a;
+    
+    /* Bordas e sombras */
+    --border-color: #ddd;
+    --shadow-light: 0 0 10px rgba(0, 0, 0, 0.1);
+    --shadow-medium: 0 2px 10px rgba(0, 0, 0, 0.1);
+    
+    /* Espaçamentos */
+    --spacing-xs: 5px;
+    --spacing-sm: 10px;
+    --spacing-md: 15px;
+    --spacing-lg: 20px;
+    --spacing-xl: 30px;
+    
+    /* Bordas arredondadas */
+    --border-radius-sm: 4px;
+    --border-radius-md: 5px;
+    --border-radius-lg: 8px;
+}
+
+/* ========================================
+   RESET E ESTILOS BASE
+   ======================================== */
 body {
     font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
+    background-color: var(--bg-light);
     margin: 0;
     padding: 0;
 }
 
+/* ========================================
+   LAYOUT PRINCIPAL DO DASHBOARD
+   ======================================== */
 .dashboard {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 20px;
+    padding: var(--spacing-lg);
 }
 
 .dashboard-header {
     text-align: center;
-    padding: 10px;
-    background-color: #007bff;
-    color: white;
-    border-radius: 5px;
+    padding: var(--spacing-sm);
+    background-color: var(--primary-color);
+    color: var(--text-white);
+    border-radius: var(--border-radius-md);
 }
 
 .dashboard-welcome {
     text-align: center;
-    margin: 20px 0;
+    margin: var(--spacing-lg) 0;
 }
 
+/* ========================================
+   BOTÕES PRINCIPAIS
+   ======================================== */
 .dashboard-buttons {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
-    margin-bottom: 20px;
+    margin-bottom: var(--spacing-lg);
 }
 
 .button {
-    padding: 10px 20px;
+    padding: var(--spacing-sm) var(--spacing-lg);
     border: none;
-    border-radius: 5px;
-    color: white;
+    border-radius: var(--border-radius-md);
+    color: var(--text-white);
     cursor: pointer;
     font-size: 16px;
     flex: 1;
-    margin: 5px;
+    margin: var(--spacing-xs);
     text-align: center;
+    transition: background-color 0.3s ease;
 }
 
-.blue { background-color: #007bff; }
-.green { background-color: #28a745; }
-.orange { background-color: #fd7e14; }
-.purple { background-color: #6f42c1; }
+/* Cores dos botões */
+.blue { background-color: var(--primary-color); }
+.green { background-color: var(--secondary-color); }
+.orange { background-color: var(--warning-color); }
+.purple { background-color: var(--purple-color); }
+.red { background-color: var(--gray-color); }
+.gold { background-color: var(--gold-color); color: var(--text-dark); }
 
-.section {
-    padding: 15px;
-    margin-top: 20px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-.section h2 {
-    margin-top: 0;
-    color: #333;
-}
-
-.blue-bg { background-color: #e7f3ff; }
-.green-bg { background-color: #e8f5e9; }
-.orange-bg { background-color: #fff4e6; }
-.purple-bg { background-color: #f3e6ff; }
-
-.close-btn {
-    float: right;
-    font-size: 20px;
-    cursor: pointer;
-    background: none;
-    border: none;
-    color: #333;
-}
-
+/* ========================================
+   SEÇÕES DO DASHBOARD
+   ======================================== */
 .dashboard-sections {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    margin-top: 20px;
-    padding: 0 15px;
+    margin-top: var(--spacing-lg);
+    padding: 0 var(--spacing-md);
 }
 
 .dashboard-sections .section {
     flex-basis: calc(50% - 10px);
-    margin-bottom: 20px;
-    padding: 15px;
-    background-color: #ffffff;
-    border-radius: 8px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: var(--spacing-lg);
+    padding: var(--spacing-md);
+    background-color: var(--bg-white);
+    border-radius: var(--border-radius-lg);
+    box-shadow: var(--shadow-medium);
 }
 
 .dashboard-sections .section h2 {
     font-size: 18px;
-    color: #333;
-    margin-bottom: 10px;
+    color: var(--text-dark);
+    margin-bottom: var(--spacing-sm);
     text-align: center;
+    margin-top: 0;
 }
 
 .dashboard-sections .section p {
     font-size: 14px;
-    color: #666;
-    margin: 5px 0;
+    color: var(--text-light);
+    margin: var(--spacing-xs) 0;
     text-align: center;
 }
 
 .dashboard-sections .section span {
     font-weight: bold;
-    color: #4a4a4a;
+    color: var(--text-muted);
 }
 
-/* Cores específicas para cada seção */
+/* Bordas coloridas para cada seção */
 .dashboard-sections .clientes {
-    border-top: 3px solid #007bff;
+    border-top: 3px solid var(--primary-color);
 }
 
 .dashboard-sections .comportamento {
-    border-top: 3px solid #28a745;
+    border-top: 3px solid var(--secondary-color);
 }
 
 .dashboard-sections .vendas {
@@ -124,81 +163,100 @@ body {
 }
 
 .dashboard-sections .perfil-cliente {
-    border-top: 3px solid #dc3545;
+    border-top: 3px solid var(--danger-color);
 }
 
-/* Media queries para responsividade */
-@media screen and (min-width: 768px) {
-    .dashboard-sections .section {
-        flex-basis: calc(25% - 15px);
-    }
+/* ========================================
+   SEÇÕES DINÂMICAS
+   ======================================== */
+.section {
+    padding: var(--spacing-md);
+    margin-top: var(--spacing-lg);
+    border-radius: var(--border-radius-lg);
+    box-shadow: var(--shadow-light);
 }
 
-@media screen and (min-width: 1024px) {
-    .dashboard-sections {
-        padding: 0 30px;
-    }
-
-    .dashboard-sections .section {
-        padding: 20px;
-    }
-
-    .dashboard-sections .section h2 {
-        font-size: 20px;
-    }
-
-    .dashboard-sections .section p {
-        font-size: 16px;
-    }
+.section h2 {
+    margin-top: 0;
+    color: var(--text-dark);
 }
 
-.dashboard-buttons + .section {
-    margin-top: 20px;
+/* Cores de fundo das seções */
+.blue-bg { background-color: var(--bg-primary); }
+.green-bg { background-color: var(--bg-secondary); }
+.orange-bg { background-color: var(--bg-warning); }
+.purple-bg { background-color: var(--bg-purple); }
+.gold-bg { background-color: var(--bg-gold); }
+
+.dynamic-section {
+    display: none;
 }
 
-#membrosTable {
+.dynamic-section.hidden {
+    display: none;
+}
+
+.close-btn {
+    float: right;
+    font-size: 20px;
+    cursor: pointer;
+    background: none;
+    border: none;
+    color: var(--text-dark);
+}
+
+/* ========================================
+   TABELAS
+   ======================================== */
+/* Estilo base para todas as tabelas */
+table {
     width: 100%;
     border-collapse: collapse;
-    margin-top: 20px;
-    background-color: #fff;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
+    margin-bottom: var(--spacing-lg);
+    background-color: var(--bg-white);
+    box-shadow: var(--shadow-light);
+    border-radius: var(--border-radius-lg);
     overflow: hidden;
 }
 
-#membrosTable th, #membrosTable td {
+table th, table td {
     padding: 12px 15px;
     text-align: left;
-    border-bottom: 1px solid #ddd;
+    border-bottom: 1px solid var(--border-color);
 }
 
-#membrosTable th {
-    background-color: #007bff;
-    color: white;
+table th {
+    background-color: var(--success-color);
+    color: var(--text-white);
     text-align: center;
     font-weight: bold;
 }
 
-#membrosTable tbody tr:nth-child(even) {
-    background-color: #f2f2f2;
+table tbody tr:nth-child(even) {
+    background-color: var(--bg-gray);
 }
 
-#membrosTable tbody tr:hover {
+table tbody tr:hover {
     background-color: #e0e0e0;
     cursor: pointer;
 }
 
-#membrosTable td {
+table td {
     text-align: center;
+}
+
+/* Tabela específica de membros */
+#membrosTable th {
+    background-color: var(--primary-color);
 }
 
 #membrosTable td button {
     padding: 8px;
     margin: 2px;
-    background-color: #007bff;
+    background-color: var(--primary-color);
     border: none;
-    color: white;
-    border-radius: 4px;
+    color: var(--text-white);
+    border-radius: var(--border-radius-sm);
     cursor: pointer;
     font-size: 16px;
     transition: background-color 0.3s ease;
@@ -208,69 +266,261 @@ body {
     background-color: #0056b3;
 }
 
-#membrosTable td button:nth-child(1) {
-    color: #ffc107;
+/* Cores específicas dos botões da tabela de membros */
+#membrosTable td button:nth-child(1) { color: #ffc107; }
+#membrosTable td button:nth-child(1):hover { color: #e0a800; }
+#membrosTable td button:nth-child(2) { color: var(--secondary-color); }
+#membrosTable td button:nth-child(2):hover { color: #218838; }
+#membrosTable td button:nth-child(3) { color: var(--danger-color); }
+#membrosTable td button:nth-child(3):hover { color: #c82333; }
+
+/* Tabela de resultado de pesquisa */
+#resultadoPesquisa th {
+    background-color: var(--warning-color);
 }
 
-#membrosTable td button:nth-child(1):hover {
-    color: #e0a800;
-}
-
-#membrosTable td button:nth-child(2) {
-    color: #28a745;
-}
-
-#membrosTable td button:nth-child(2):hover {
-    color: #218838;
-}
-
-#membrosTable td button:nth-child(3) {
-    color: #dc3545;
-}
-
-#membrosTable td button:nth-child(3):hover {
-    color: #c82333;
-}
-
-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-bottom: 20px;
-}
-
-table th, table td {
-    border: 1px solid #ddd;
-    padding: 8px;
-    text-align: left;
-}
-
-table th {
-    background-color: #4CAF50;
-    color: white;
-}
-
-table tr:nth-child(even) {
-    background-color: #f2f2f2;
-}
-
-table tr:hover {
-    background-color: #ddd;
-}
-
-button {
-    padding: 5px 10px;
-    margin: 5px;
-    color: white;
-    background-color: blue;
+#resultadoPesquisa td button {
+    padding: var(--spacing-xs) var(--spacing-sm);
+    background-color: var(--primary-color);
     border: none;
-    border-radius: 5px;
+    color: var(--text-white);
+    border-radius: var(--border-radius-md);
+    cursor: pointer;
+    margin: 2px;
+}
+
+#resultadoPesquisa td button:hover {
+    background-color: #0056b3;
+}
+
+/* Tabela de prêmios */
+#premiosTable th {
+    background-color: var(--purple-color);
+}
+
+#premiosTable td button {
+    padding: 8px;
+    margin: 2px;
+    background-color: transparent;
+    border: none;
+    color: var(--purple-color);
+    cursor: pointer;
+    font-size: 16px;
+    transition: color 0.3s ease;
+}
+
+#premiosTable td button:hover {
+    color: #5a32a3;
+}
+
+/* Tabela de ranking */
+#rankingTable th {
+    background-color: var(--gold-color);
+    color: var(--text-dark);
+}
+
+#rankingTable td:first-child {
+    font-weight: bold;
+    color: var(--gold-color);
+}
+
+#rankingTable tr:nth-child(1) td:first-child {
+    color: #ffd700; /* Dourado para o primeiro lugar */
+}
+
+#rankingTable tr:nth-child(2) td:first-child {
+    color: #c0c0c0; /* Prata para o segundo lugar */
+}
+
+#rankingTable tr:nth-child(3) td:first-child {
+    color: #cd7f32; /* Bronze para o terceiro lugar */
+}
+
+/* ========================================
+   FORMULÁRIOS
+   ======================================== */
+/* Estilo base para formulários */
+.form-group {
+    margin-bottom: var(--spacing-lg);
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: var(--spacing-xs);
+    font-weight: bold;
+    color: var(--text-dark);
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+    padding: var(--spacing-sm);
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius-sm);
+    font-size: 16px;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
+}
+
+/* Formulário de cadastro */
+#cadastroForm {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: var(--spacing-lg);
+    background-color: var(--bg-white);
+    border-radius: var(--border-radius-lg);
+    box-shadow: var(--shadow-medium);
+}
+
+#cadastroForm button {
+    width: 100%;
+    padding: 12px;
+    background-color: var(--primary-color);
+    color: var(--text-white);
+    border: none;
+    border-radius: var(--border-radius-sm);
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#cadastroForm button:hover {
+    background-color: #0056b3;
+}
+
+/* Formulário de prêmios */
+#premiosForm {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: var(--spacing-lg);
+    background-color: var(--bg-white);
+    border-radius: var(--border-radius-lg);
+    box-shadow: var(--shadow-medium);
+}
+
+#premiosForm .form-group input:focus {
+    border-color: var(--purple-color);
+    box-shadow: 0 0 0 2px rgba(111, 66, 193, 0.25);
+}
+
+#premiosForm button {
+    width: 100%;
+    padding: 12px;
+    background-color: var(--purple-color);
+    color: var(--text-white);
+    border: none;
+    border-radius: var(--border-radius-sm);
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#premiosForm button:hover {
+    background-color: #5a32a3;
+}
+
+/* ========================================
+   ELEMENTOS ESPECÍFICOS
+   ======================================== */
+button {
+    padding: var(--spacing-xs) var(--spacing-sm);
+    margin: var(--spacing-xs);
+    color: var(--text-white);
+    background-color: var(--primary-color);
+    border: none;
+    border-radius: var(--border-radius-md);
     cursor: pointer;
 }
 
-/* Media Queries para Responsividade */
-@media screen and (max-width: 768px) {
+#sairButton {
+    position: fixed;
+    bottom: var(--spacing-lg);
+    right: var(--spacing-lg);
+    padding: var(--spacing-sm) var(--spacing-lg);
+    font-size: 16px;
+    z-index: 1000;
+}
+
+.fas {
+    margin-right: var(--spacing-xs);
+    color: #e4e5e7;
+}
+
+/* ========================================
+   RESPONSIVIDADE
+   ======================================== */
+/* Desktop grande */
+@media screen and (min-width: 1024px) {
+    .dashboard-sections {
+        padding: 0 var(--spacing-xl);
+    }
+
+    .dashboard-sections .section {
+        padding: var(--spacing-lg);
+        flex-basis: calc(25% - 15px);
+    }
+
+    .dashboard-sections .section h2 {
+        font-size: 20px;
+    }
+
+    .dashboard-sections .section p {
+        font-size: 16px;
+    }
+
+    #cadastroForm,
+    #premiosForm {
+        max-width: 800px;
+        padding: var(--spacing-xl);
+    }
+
+    .form-group {
+        display: flex;
+        align-items: center;
+    }
+
+    .form-group label {
+        width: 30%;
+        margin-bottom: 0;
+        margin-right: var(--spacing-sm);
+    }
+
+    .form-group input,
+    .form-group select {
+        width: 70%;
+    }
+
+    #cadastroForm button,
+    #premiosForm button {
+        width: auto;
+        padding: 12px var(--spacing-xl);
+        margin-left: 30%;
+    }
+}
+
+/* Tablet */
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+    .dashboard-sections .section {
+        flex-basis: calc(25% - 15px);
+    }
+
+    #cadastroForm,
+    #premiosForm {
+        padding: var(--spacing-xl);
+    }
+}
+
+/* Mobile grande */
+@media screen and (max-width: 767px) {
     .dashboard {
-        padding: 10px;
+        padding: var(--spacing-sm);
     }
 
     .dashboard-buttons {
@@ -279,7 +529,7 @@ button {
     }
 
     .dashboard-buttons .button {
-        margin: 5px 0;
+        margin: var(--spacing-xs) 0;
     }
 
     .dashboard-sections {
@@ -297,6 +547,7 @@ button {
     }
 }
 
+/* Mobile pequeno */
 @media screen and (max-width: 480px) {
     .dashboard-header h1 {
         font-size: 24px;
@@ -304,309 +555,10 @@ button {
 
     .button {
         font-size: 14px;
-        padding: 10px;
+        padding: var(--spacing-sm);
     }
 
     .dashboard-sections .section {
-        padding: 10px;
-    }
-}
-
-.red { background-color: #5c5858; }
-
-#sairButton {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    padding: 10px 20px;
-    font-size: 16px;
-    z-index: 1000;
-}
-
-.dynamic-section {
-    display: none;
-}
-
-.dynamic-section.hidden {
-    display: none;
-}
-
-#resultadoPesquisa table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 20px;
-    background-color: #fff;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
-    overflow: hidden;
-}
-
-#resultadoPesquisa th, #resultadoPesquisa td {
-    padding: 12px 15px;
-    text-align: left;
-    border-bottom: 1px solid #ddd;
-}
-
-#resultadoPesquisa th {
-    background-color: #fd7e14;
-    color: white;
-    text-align: center;
-}
-
-#resultadoPesquisa tbody tr:nth-child(even) {
-    background-color: #f2f2f2;
-}
-
-#resultadoPesquisa tbody tr:hover {
-    background-color: #f1f1f1;
-    cursor: pointer;
-}
-
-#resultadoPesquisa td {
-    text-align: center;
-}
-
-#resultadoPesquisa td button {
-    padding: 5px 10px;
-    background-color: #007bff;
-    border: none;
-    color: white;
-    border-radius: 5px;
-    cursor: pointer;
-    margin: 2px;
-}
-
-#resultadoPesquisa td button:hover {
-    background-color: #0056b3;
-}
-
-/* Estilos para o formulário de cadastro */
-#cadastroForm {
-    width: 100%;
-    max-width: 600px;
-    margin: 0 auto;
-    padding: 20px;
-    background-color: #ffffff;
-    border-radius: 8px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-}
-
-.form-group {
-    margin-bottom: 20px;
-}
-
-.form-group label {
-    display: block;
-    margin-bottom: 5px;
-    font-weight: bold;
-    color: #333;
-}
-
-.form-group input,
-.form-group select {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    font-size: 16px;
-}
-
-.form-group input:focus,
-.form-group select:focus {
-    outline: none;
-    border-color: #007bff;
-    box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
-}
-
-#cadastroForm button {
-    width: 100%;
-    padding: 12px;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    font-size: 16px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-#cadastroForm button:hover {
-    background-color: #0056b3;
-}
-
-/* Media queries para responsividade */
-@media screen and (min-width: 768px) {
-    #cadastroForm {
-        padding: 30px;
-    }
-
-    .form-group {
-        display: flex;
-        align-items: center;
-    }
-
-    .form-group label {
-        width: 30%;
-        margin-bottom: 0;
-        margin-right: 10px;
-    }
-
-    .form-group input,
-    .form-group select {
-        width: 70%;
-    }
-
-    #cadastroForm button {
-        width: auto;
-        padding: 12px 30px;
-        margin-left: 30%;
-    }
-}
-
-@media screen and (min-width: 1024px) {
-    #cadastroForm {
-        max-width: 800px;
-    }
-}
-
-/* Estilos para os ícones */
-.fas {
-    margin-right: 5px;
-    color: #e4e5e7;
-}
-
-/* Estilos para o formulário de prêmios */
-#premiosForm {
-    width: 100%;
-    max-width: 600px;
-    margin: 0 auto;
-    padding: 20px;
-    background-color: #ffffff;
-    border-radius: 8px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-}
-
-#premiosForm .form-group {
-    margin-bottom: 20px;
-}
-
-#premiosForm .form-group label {
-    display: block;
-    margin-bottom: 5px;
-    font-weight: bold;
-    color: #333;
-}
-
-#premiosForm .form-group input {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    font-size: 16px;
-}
-
-#premiosForm .form-group input:focus {
-    outline: none;
-    border-color: #6f42c1;
-    box-shadow: 0 0 0 2px rgba(111, 66, 193, 0.25);
-}
-
-#premiosForm button {
-    width: 100%;
-    padding: 12px;
-    background-color: #6f42c1;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    font-size: 16px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-#premiosForm button:hover {
-    background-color: #5a32a3;
-}
-
-#premiosTable {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 20px;
-    background-color: #fff;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
-    overflow: hidden;
-}
-
-#premiosTable th, #premiosTable td {
-    padding: 12px 15px;
-    text-align: left;
-    border-bottom: 1px solid #ddd;
-}
-
-#premiosTable th {
-    background-color: #6f42c1;
-    color: white;
-    text-align: center;
-}
-
-#premiosTable tbody tr:nth-child(even) {
-    background-color: #f2f2f2;
-}
-
-#premiosTable tbody tr:hover {
-    background-color: #f1f1f1;
-    cursor: pointer;
-}
-
-#premiosTable td {
-    text-align: center;
-}
-
-#premiosTable td button {
-    padding: 8px;
-    margin: 2px;
-    background-color: transparent;
-    border: none;
-    color: #6f42c1;
-    cursor: pointer;
-    font-size: 16px;
-    transition: color 0.3s ease;
-}
-
-#premiosTable td button:hover {
-    color: #5a32a3;
-}
-
-/* Media queries para responsividade */
-@media screen and (min-width: 768px) {
-    #premiosForm {
-        padding: 30px;
-    }
-
-    #premiosForm .form-group {
-        display: flex;
-        align-items: center;
-    }
-
-    #premiosForm .form-group label {
-        width: 30%;
-        margin-bottom: 0;
-        margin-right: 10px;
-    }
-
-    #premiosForm .form-group input {
-        width: 70%;
-    }
-
-    #premiosForm button {
-        width: auto;
-        padding: 12px 30px;
-        margin-left: 30%;
-    }
-}
-
-@media screen and (min-width: 1024px) {
-    #premiosForm {
-        max-width: 800px;
+        padding: var(--spacing-sm);
     }
 }

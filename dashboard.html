@@ -24,6 +24,8 @@
             <button class="button orange" data-section="pontuar">Pesquisar</button>
             <button class="button green" data-section="membros">Membros</button>
             <button class="button purple" data-section="premiar">Premios</button>
+            <button class="button gold" data-section="ranking"><i class="fas fa-trophy"></i> Ranking</button>
+
         </div>
 
         <!-- Seções dinâmicas -->
@@ -105,6 +107,22 @@
                 <tbody id="premiosList"></tbody>
             </table>
         </div>
+        <div id="ranking" class="section dynamic-section hidden gold-bg">
+            <button class="close-btn" onclick="hideSection('ranking')">&times;</button>
+            <h2><i class="fas fa-trophy"></i> Ranking de Clientes Mais Ativos</h2>
+            <table id="rankingTable">
+                <thead>
+                    <tr>
+                        <th>Posição</th>
+                        <th>Nome</th>
+                        <th>Telefone</th>
+                        <th>Pontos</th>
+                    </tr>
+                </thead>
+                <tbody id="rankingList"></tbody>
+            </table>
+        </div>
+        
 
         <div id="perfilCliente" class="section dynamic-section hidden">
             <button class="close-btn" onclick="hideSection('perfilCliente')">&times;</button>

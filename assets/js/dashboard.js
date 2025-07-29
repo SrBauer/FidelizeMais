@@ -19,6 +19,11 @@ function showSection(sectionId) {
         const button = document.querySelector(`.button[data-section="${sectionId}"]`);
         const offsetTop = button ? button.offsetTop + button.offsetHeight + 10 : 0;
         section.style.top = `${offsetTop}px`;
+        
+        // Chama listarRanking se for a seção de ranking
+        if (sectionId === 'ranking') {
+            listarRanking();
+        }
     }
     // Se a seção não estava escondida, ela permanecerá escondida
 }
@@ -196,6 +201,30 @@ function listarPremios() {
         premiosList.appendChild(tr);
     });
 }
+
+function listarRanking() {
+    const rankingList = document.getElementById('rankingList');
+    rankingList.innerHTML = '';
+
+    if (clientes.length === 0) {
+        rankingList.innerHTML = '<tr><td colspan="4" style="text-align: center; padding: 20px; color: #666;">Nenhum cliente cadastrado ainda.</td></tr>';
+        return;
+    }
+
+    const clientesOrdenados = [...clientes].sort((a, b) => b.pontos - a.pontos);
+
+    clientesOrdenados.forEach((cliente, index) => {
+        const tr = document.createElement('tr');
+        tr.innerHTML = `
+            <td>${index + 1}º</td>
+            <td>${cliente.nome}</td>
+            <td>${cliente.telefone}</td>
+            <td>${cliente.pontos}</td>
+        `;
+        rankingList.appendChild(tr);
+    });
+}
+
 
 function editarPremio(index) {
     const novoNome = prompt('Novo nome do prêmio:', premios[index].nome);
